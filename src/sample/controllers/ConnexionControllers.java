@@ -37,7 +37,7 @@ public class ConnexionControllers implements Initializable{
                 ResultSet res = state.executeQuery(query);
                 if (res.next()){
                     ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
-                    Parent parent = FXMLLoader.load(getClass().getResource(""));
+                    Parent parent = FXMLLoader.load(getClass().getResource("../view/menu.fxml"));
                     Stage stage = new Stage();
                     Scene scene = new Scene(parent);
                     stage.setScene(scene);

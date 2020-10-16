@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="648.0" prefWidth="782.0" fx:controller="sample.controllers.MenuControllers" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane layoutX="196.0" prefHeight="382.0" prefWidth="391.0">
+         <children>
+            <Pane fx:id="pane1" prefHeight="400.0" prefWidth="406.0" style="-fx-background-color: #E9967A;" />
+            <Pane fx:id="pane2" prefHeight="400.0" prefWidth="406.0" style="-fx-background-color: #CD5C5C;" />
+            <Pane fx:id="pane3" prefHeight="400.0" prefWidth="406.0" style="-fx-background-color: #FFA07A;" />
+            <Pane fx:id="pane4" prefHeight="648.0" prefWidth="588.0" style="-fx-background-color: #000000;" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="-3.0" prefHeight="648.0" prefWidth="195.0">
+         <children>
+            <Button fx:id="bt" blendMode="HARD_LIGHT" layoutX="4.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="196.0" text="Tableau de bord" />
+            <AnchorPane fx:id="bt1" layoutX="1.0" prefHeight="648.0" prefWidth="22.0" />
+            <Button fx:id="aj_cand" blendMode="HARD_LIGHT" layoutX="2.0" layoutY="66.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="196.0" text="Ajouter candidat" />
+            <Button fx:id="mi_rdv" blendMode="HARD_LIGHT" layoutX="3.0" layoutY="118.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="196.0" text="Mise en place rendez-vous" />
+            <Button fx:id="eval_caf" blendMode="HARD_LIGHT" layoutX="2.0" layoutY="173.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="196.0" text="Evaluation Cafe" />
+            <Button fx:id="eval_cac" blendMode="HARD_LIGHT" layoutX="1.0" layoutY="229.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="196.0" text="Evaluation Cacao" />
+            <Button fx:id="del_caf" blendMode="HARD_LIGHT" layoutY="281.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="196.0" text="Délibération Café" />
+            <Button fx:id="del_cac" blendMode="HARD_LIGHT" layoutX="4.0" layoutY="345.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="196.0" text="Délibération Cacao" />
+            <Button fx:id="del_cac1" blendMode="HARD_LIGHT" layoutX="4.0" layoutY="395.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="196.0" text="Deconnexion" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
