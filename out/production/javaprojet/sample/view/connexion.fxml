@@ -27,8 +27,8 @@
                </font>
             </Text>
             <TextField fx:id="identifiant" blendMode="MULTIPLY" layoutX="26.0" layoutY="76.0" prefHeight="42.0" prefWidth="239.0" promptText="IDENTIFIANT" />
-            <PasswordField fx:id="mdp" blendMode="MULTIPLY" layoutX="26.0" layoutY="132.0" prefHeight="49.0" prefWidth="239.0" promptText="MOT DE PASSE" />
-            <Button fx:id="connect" layoutX="61.0" layoutY="190.0" mnemonicParsing="false" onAction="#connexion" prefHeight="42.0" prefWidth="152.0" text="CONNEXION" textFill="#3316ff" textOverrun="CENTER_ELLIPSIS" />
+            <PasswordField fx:id="mdp" blendMode="MULTIPLY" layoutX="26.0" layoutY="139.0" prefHeight="42.0" prefWidth="239.0" promptText="MOT DE PASSE" />
+            <Button fx:id="connect" layoutX="61.0" layoutY="205.0" mnemonicParsing="false" onAction="#connexion" prefHeight="42.0" prefWidth="152.0" text="CONNEXION" textFill="#3316ff" textOverrun="CENTER_ELLIPSIS" />
          </children>
       </Pane>
    </children>
