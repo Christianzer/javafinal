@@ -183,6 +183,12 @@ public class Inscription2Controllers implements Initializable {
                         preparedStatement2.setInt(1,id_plant);
                         preparedStatement2.setInt(2,methode.getSelectionModel().getSelectedIndex());
                         int resultat2 = preparedStatement2.executeUpdate();
+                        if(resultat2 == 1){
+                            int nbreEmp = Integer.parseInt(nombreEmpl.getText());
+                            int nbreFem = Integer.parseInt(nbreFemme.getText());
+                            int sal = Integer.parseInt(salaireMax.getText());
+                            String password = getRandomStr(6);
+                        }
                     }
                 }
             }
