@@ -36,9 +36,7 @@ public class Inscription2Controllers implements Initializable {
     private FileInputStream fileInputStreamPlant;
     private FileInputStream fileInputStreamEmpl;
     private int id_candi;
-
     private int id_plant;
-
     private String email;
 
     @FXML
@@ -129,7 +127,6 @@ public class Inscription2Controllers implements Initializable {
         this.getCulture();
         this.getMethod();
         id_candi = Main.getIdentifiant_cand();
-        id_plant = Main.getIdentifiant_plant();
         email = Main.getMail();
         mineur.getItems().add("");
         mineur.getItems().add("OUI");
@@ -188,13 +185,42 @@ public class Inscription2Controllers implements Initializable {
                             int nbreFem = Integer.parseInt(nbreFemme.getText());
                             int sal = Integer.parseInt(salaireMax.getText());
                             String password = getRandomStr(6);
+                            Main.setMdp(password);
+                            String employe = "{call INSERTEMPLOYE(?,?,?,?,?)}";
+                            PreparedStatement preparedStat = AgriConnexion.getInstance().prepareStatement(employe);
+                            preparedStat.setInt(1,nbreEmp);
+                            preparedStat.setInt(2,nbreFem);
+                            preparedStat.setInt(3,sal);
+                            preparedStat.setInt(4,mineur.getSelectionModel().getSelectedIndex());
+                            preparedStat.setBinaryStream(5,(InputStream)fileInputStreamEmpl,(int)fileEmpl.length());
+                            int resultat3 = preparedStat.executeUpdate();
+                            String maxid = "SELECT MAX(ID_EMPL_CAND) AS identifiant_empl FROM EMPLOYE_CANDIDATS";
+                            Statement statement1 = AgriConnexion.getInstance().createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+                            ResultSet resultSet1 = statement.executeQuery(maxid);
+                            resultSet1.next();
+                            int id_empl = Integer.parseInt(resultSet1.getString("identifiant_empl"));
+                            if (resultat3 == 1){
+                                String dossier = "{call INSERTDOSSIERINS(?,?,?,?,?,?)}";
+                                PreparedStatement preparedStatement3 = AgriConnexion.getInstance().prepareStatement(dossier);
+                                preparedStatement3.setString(1,email);
+                                preparedStatement3.setString(2,password);
+                                preparedStatement3.setInt(3,id_plant);
+                                preparedStatement3.setInt(4,id_candi);
+                                preparedStatement3.setInt(5,id_empl);
+                                preparedStatement3.setString(6,datainscription);
+                                int resultat4 = preparedStatement3.executeUpdate();
+                                if (resultat4 == 1){
+                                    ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
+                                    MenuChanger("FinInscription.fxml");
+                                }
+
+                            }
                         }
                     }
                 }
             }
         }
-            ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
-        MenuChanger("FinInscription.fxml");
+
     }
 
     public void AjouterCertPlant(ActionEvent actionEvent) throws FileNotFoundException {
