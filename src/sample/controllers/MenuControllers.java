@@ -35,45 +35,6 @@ public class MenuControllers implements Initializable {
     public TableColumn<DossierInscription,String> datatypecult;
     public TableColumn<DossierInscription,String> dataetat;
 
-
-    private void getDossier() throws SQLException {
-        String query = "SELECT D.DOSSIER,C2.NOM_CANDIDAT,C2.PRENOM_CANDIDAT,TY.LIBELLE_TYPE_CULTURES ,E.LIBELLE_ETAT FROM DOSSIER_INSCRIPTIONS D JOIN CANDIDATS C2 on D.ID_CAND = C2.ID_CAND JOIN ETATS E on E.ID_TABLE = D.VALIDATION\n" +
-                "JOIN AVOIR_CULTURES AC on D.ID_PLANT = AC.ID_PLANT JOIN TYPE_CULTURES TY ON TY.ID_TYPE_CULTURES = AC.ID_TYPE_CULT ORDER BY VALIDATION ASC ";
-        this.donneIns = FXCollections.observableArrayList();
-        Statement statement = AgriConnexion.getInstance().createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-        ResultSet res2 = statement.executeQuery(query);
-        while (res2.next()){
-            this.donneIns.add(new DossierInscription
-                    (res2.getInt(1),res2.getString(2),
-                            res2.getString(3),res2.getString(4),res2.getString(5)));
-        }
-        this.datadossier.setCellValueFactory(new PropertyValueFactory<DossierInscription,Integer>("dossier"));
-        this.datanom.setCellValueFactory(new PropertyValueFactory<DossierInscription,String>("nom"));
-        this.dataprenoms.setCellValueFactory(new PropertyValueFactory<DossierInscription,String>("prenoms"));
-        this.datatypecult.setCellValueFactory(new PropertyValueFactory<DossierInscription,String>("typecult"));
-        this.dataetat.setCellValueFactory(new PropertyValueFactory<DossierInscription,String>("etat"));
-
-        this.tableauDossier.setItems(null);
-        this.tableauDossier.setItems(this.donneIns);
-    }
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        try {
-            getDossier();
-        } catch (SQLException sqlException) {
-            sqlException.printStackTrace();
-        }
-    }
-
-
-
-
-
-
-
-
-
     public void tableauBord(MouseEvent mouseEvent) {
         ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
         MenuChanger("menu.fxml");
@@ -117,6 +78,41 @@ public class MenuControllers implements Initializable {
         stage.setScene(scene2);
         stage.show();
     }
+
+    private void getDossier() throws SQLException {
+        String query = "SELECT D.DOSSIER,C2.NOM_CANDIDAT,C2.PRENOM_CANDIDAT,TY.LIBELLE_TYPE_CULTURES ,E.LIBELLE_ETAT FROM DOSSIER_INSCRIPTIONS D JOIN CANDIDATS C2 on D.ID_CAND = C2.ID_CAND JOIN ETATS E on E.ID_TABLE = D.VALIDATION\n" +
+                "JOIN AVOIR_CULTURES AC on D.ID_PLANT = AC.ID_PLANT JOIN TYPE_CULTURES TY ON TY.ID_TYPE_CULTURES = AC.ID_TYPE_CULT ORDER BY VALIDATION ASC ";
+        this.donneIns = FXCollections.observableArrayList();
+        Statement statement = AgriConnexion.getInstance().createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+        ResultSet res2 = statement.executeQuery(query);
+        while (res2.next()){
+            this.donneIns.add(new DossierInscription
+                    (res2.getInt(1),res2.getString(2),
+                            res2.getString(3),res2.getString(4),res2.getString(5)));
+        }
+        this.datadossier.setCellValueFactory(new PropertyValueFactory<DossierInscription,Integer>("dossier"));
+        this.datanom.setCellValueFactory(new PropertyValueFactory<DossierInscription,String>("nom"));
+        this.dataprenoms.setCellValueFactory(new PropertyValueFactory<DossierInscription,String>("prenoms"));
+        this.datatypecult.setCellValueFactory(new PropertyValueFactory<DossierInscription,String>("typecult"));
+        this.dataetat.setCellValueFactory(new PropertyValueFactory<DossierInscription,String>("etat"));
+
+        this.tableauDossier.setItems(null);
+        this.tableauDossier.setItems(this.donneIns);
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        try {
+            getDossier();
+        } catch (SQLException sqlException) {
+            sqlException.printStackTrace();
+        }
+    }
+
+
+
+
+
 
 
 }

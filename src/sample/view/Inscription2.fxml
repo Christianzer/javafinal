@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="645.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="sample.controllers.Inscription2Controllers" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox prefHeight="645.0" prefWidth="141.0" style="-fx-background-color: #404040;" styleClass="-fx-text-fill">
+         <children>
+            <Button fx:id="bt11" blendMode="OVERLAY" mnemonicParsing="false" onMouseClicked="#tableauBord" prefHeight="46.0" prefWidth="160.0" text="TABLEAU DE BORD" textFill="#464343" />
+            <Button fx:id="bt111" blendMode="OVERLAY" mnemonicParsing="false" onMouseClicked="#ajouterCandidat" prefHeight="46.0" prefWidth="147.0" text="AJOUTER CANDIDAT" textFill="#464343" />
+            <Button fx:id="bt1111" blendMode="OVERLAY" mnemonicParsing="false" onMouseClicked="#rendezVous" prefHeight="46.0" prefWidth="154.0" text="RENDEZ VOUS" textFill="#464343" />
+            <Button fx:id="bt11111" blendMode="OVERLAY" mnemonicParsing="false" onMouseClicked="#evaluationCafe" prefHeight="46.0" prefWidth="144.0" text="EVALUATION CAFE" textFill="#464343" />
+            <Button fx:id="bt111111" blendMode="OVERLAY" mnemonicParsing="false" onMouseClicked="#evaluationCacao" prefHeight="46.0" prefWidth="144.0" text="EVALUATION CACAO" textFill="#464343" />
+            <Button fx:id="bt1111111" blendMode="OVERLAY" mnemonicParsing="false" onMouseClicked="#deliberationCafe" prefHeight="46.0" prefWidth="144.0" text="DELIBERATION CAFE" textFill="#464343" />
+            <Button fx:id="bt1" blendMode="OVERLAY" mnemonicParsing="false" onMouseClicked="#deliberationCacao" prefHeight="46.0" prefWidth="160.0" text="DELIBEARTION CACAO" textFill="#464343" />
+         </children>
+      </VBox>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="148.0" layoutY="7.0" prefHeight="46.0" prefWidth="523.0" text="INFORMATION SUR LA PLANTATION ET EMPLOYE CANDIDAT">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="166.0" layoutY="71.0" prefHeight="36.0" prefWidth="161.0" text="CERTIFICAT PLANTATION :" />
+      <Label layoutX="165.0" layoutY="112.0" prefHeight="36.0" prefWidth="185.0" text="LOCALISATION PLANTATION : " />
+      <Label layoutX="166.0" layoutY="152.0" prefHeight="36.0" prefWidth="192.0" text="SUPERFICIE PLANTATION :" />
+      <Label layoutX="166.0" layoutY="192.0" prefHeight="36.0" prefWidth="167.0" text="METHODE CULTURE : " />
+      <Label layoutX="166.0" layoutY="232.0" prefHeight="36.0" prefWidth="122.0" text="TYPE CULTURE :" />
+      <Label layoutX="166.0" layoutY="332.0" prefHeight="36.0" prefWidth="161.0" text="NOMBRE EMPLOYE :" />
+      <Label layoutX="166.0" layoutY="372.0" prefHeight="36.0" prefWidth="192.0" text="NOMBRE DE FEMME EMPLOYE :" />
+      <Label layoutX="166.0" layoutY="412.0" prefHeight="36.0" prefWidth="122.0" text="SALAIRE MAXIMUM :" />
+      <Label layoutX="166.0" layoutY="456.0" prefHeight="36.0" prefWidth="161.0" text="CERTIFICAT EMPLOYE :" />
+      <Label layoutX="166.0" layoutY="501.0" prefHeight="36.0" prefWidth="185.0" text="EMPLOYE VOUS DES MINEURS :" />
+      <Button layoutX="290.0" layoutY="581.0" mnemonicParsing="false" onMouseClicked="#enregistrer" prefHeight="46.0" prefWidth="279.0" text="ENREGISTER" />
+      <Button fx:id="ImgPlantation" layoutX="341.0" layoutY="68.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="130.0" text="CHOISIR IMAGE" />
+      <Button fx:id="certEmploye" layoutX="353.0" layoutY="456.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="122.0" text="CHOISIR IMAGE" />
+      <TextField fx:id="localisation" layoutX="369.0" layoutY="114.0" prefHeight="30.0" prefWidth="204.0" />
+      <TextField fx:id="superficie" layoutX="368.0" layoutY="155.0" prefHeight="30.0" prefWidth="102.0" />
+      <TextField fx:id="nombreEmpl" layoutX="370.0" layoutY="335.0" prefHeight="30.0" prefWidth="54.0" />
+      <TextField fx:id="salaireMax" layoutX="371.0" layoutY="415.0" prefHeight="30.0" prefWidth="185.0" />
+      <ComboBox fx:id="mineur" layoutX="385.0" layoutY="502.0" prefHeight="36.0" prefWidth="220.0" />
+      <TextField fx:id="libPlantation" layoutX="483.0" layoutY="67.0" prefHeight="36.0" prefWidth="185.0" />
+      <TextField fx:id="libcertEmpl" layoutX="485.0" layoutY="456.0" prefHeight="36.0" prefWidth="185.0" />
+      <ComboBox fx:id="methode" layoutX="368.0" layoutY="193.0" prefHeight="36.0" prefWidth="220.0" />
+      <ComboBox fx:id="typeCulture" layoutX="369.0" layoutY="232.0" prefHeight="36.0" prefWidth="220.0" />
+      <TextField fx:id="nbreFemme" layoutX="370.0" layoutY="375.0" prefHeight="30.0" prefWidth="54.0" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="148.0" layoutY="277.0" prefHeight="46.0" prefWidth="523.0" text="INFORMATION SUR LES EMPLOYES DE LA PLANTATION">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

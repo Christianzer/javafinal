@@ -30,30 +30,34 @@
       <Label layoutX="166.0" layoutY="71.0" prefHeight="36.0" prefWidth="81.0" text="PHOTO:" />
       <Label layoutX="165.0" layoutY="112.0" prefHeight="36.0" prefWidth="81.0" text="NOM :" />
       <Label layoutX="166.0" layoutY="152.0" prefHeight="36.0" prefWidth="81.0" text="PRENOMS:" />
-      <Label layoutX="166.0" layoutY="192.0" prefHeight="36.0" prefWidth="122.0" text="DATE NAISSANCE:" />
-      <Label layoutX="166.0" layoutY="232.0" prefHeight="36.0" prefWidth="122.0" text="LIEU NAISSANCE:" />
-      <Label layoutX="166.0" layoutY="272.0" prefHeight="36.0" prefWidth="122.0" text="NATIONALITE:" />
-      <Label layoutX="166.0" layoutY="312.0" prefHeight="36.0" prefWidth="122.0" text="TYPE PIECE :" />
-      <Label layoutX="166.0" layoutY="352.0" prefHeight="36.0" prefWidth="122.0" text="NUMERO PIECE :" />
-      <Label layoutX="166.0" layoutY="396.0" prefHeight="36.0" prefWidth="122.0" text="IMAGE PIECE :" />
-      <Label layoutX="166.0" layoutY="438.0" prefHeight="36.0" prefWidth="122.0" text="TYPE DIPLOME:" />
-      <Label layoutX="166.0" layoutY="474.0" prefHeight="36.0" prefWidth="130.0" text="NUMERO DIPLOME:" />
-      <Label layoutX="166.0" layoutY="520.0" prefHeight="36.0" prefWidth="130.0" text="IMAGE DIPLOME :" />
-      <Button layoutX="290.0" layoutY="581.0" mnemonicParsing="false" onMouseClicked="#suivant" prefHeight="46.0" prefWidth="279.0" text="SUIVANT" />
+      <Label layoutX="166.0" layoutY="222.0" prefHeight="36.0" prefWidth="122.0" text="DATE NAISSANCE:" />
+      <Label layoutX="166.0" layoutY="262.0" prefHeight="36.0" prefWidth="122.0" text="LIEU NAISSANCE:" />
+      <Label layoutX="166.0" layoutY="302.0" prefHeight="36.0" prefWidth="122.0" text="NATIONALITE:" />
+      <Label layoutX="166.0" layoutY="342.0" prefHeight="36.0" prefWidth="122.0" text="TYPE PIECE :" />
+      <Label layoutX="166.0" layoutY="382.0" prefHeight="36.0" prefWidth="122.0" text="NUMERO PIECE :" />
+      <Label layoutX="166.0" layoutY="426.0" prefHeight="36.0" prefWidth="122.0" text="IMAGE PIECE :" />
+      <Label layoutX="166.0" layoutY="468.0" prefHeight="36.0" prefWidth="122.0" text="TYPE DIPLOME:" />
+      <Label layoutX="166.0" layoutY="504.0" prefHeight="36.0" prefWidth="130.0" text="NUMERO DIPLOME:" />
+      <Label layoutX="166.0" layoutY="550.0" prefHeight="36.0" prefWidth="130.0" text="IMAGE DIPLOME :" />
+      <Button layoutX="290.0" layoutY="591.0" mnemonicParsing="false" onMouseClicked="#suivant" prefHeight="46.0" prefWidth="279.0" text="SUIVANT" />
       <Button fx:id="photoCand" layoutX="231.0" layoutY="68.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="130.0" text="CHOISIR IMAGE" />
-      <Button fx:id="imgPiece" layoutX="275.0" layoutY="396.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="130.0" text="CHOISIR IMAGE" />
-      <Button fx:id="imgDip" layoutX="288.0" layoutY="521.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="130.0" text="CHOISIR IMAGE" />
+      <Button fx:id="imgPiece" layoutX="275.0" layoutY="426.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="130.0" text="CHOISIR IMAGE" />
+      <Button fx:id="imgDip" layoutX="288.0" layoutY="551.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="130.0" text="CHOISIR IMAGE" />
       <TextField fx:id="nomCand" layoutX="214.0" layoutY="114.0" prefHeight="30.0" prefWidth="204.0" />
       <TextField fx:id="prenomsCand" layoutX="251.0" layoutY="155.0" prefHeight="30.0" prefWidth="350.0" />
-      <DatePicker fx:id="dateCand" layoutX="296.0" layoutY="197.0" prefHeight="25.0" prefWidth="235.0" />
-      <TextField fx:id="lieuCand" layoutX="303.0" layoutY="235.0" prefHeight="30.0" prefWidth="204.0" />
-      <TextField fx:id="natioCand" layoutX="279.0" layoutY="275.0" prefHeight="30.0" prefWidth="204.0" />
-      <ComboBox fx:id="typePiece" layoutX="278.0" layoutY="318.0" prefWidth="220.0" />
-      <TextField fx:id="numPieceCand" layoutX="284.0" layoutY="355.0" prefHeight="30.0" prefWidth="204.0" />
-      <ComboBox fx:id="typeDipCand" layoutX="295.0" layoutY="442.0" prefWidth="220.0" />
-      <TextField fx:id="numDipCand" layoutX="303.0" layoutY="477.0" prefHeight="30.0" prefWidth="204.0" />
+      <DatePicker fx:id="dateCand" layoutX="296.0" layoutY="227.0" prefHeight="25.0" prefWidth="235.0" />
+      <TextField fx:id="lieuCand" layoutX="303.0" layoutY="265.0" prefHeight="30.0" prefWidth="204.0" />
+      <TextField fx:id="natioCand" layoutX="279.0" layoutY="305.0" prefHeight="30.0" prefWidth="204.0" />
+      <ComboBox fx:id="typePiece" layoutX="278.0" layoutY="348.0" prefWidth="220.0" />
+      <TextField fx:id="numPieceCand" layoutX="284.0" layoutY="385.0" prefHeight="30.0" prefWidth="204.0" />
+      <ComboBox fx:id="typeDipCand" layoutX="295.0" layoutY="472.0" prefWidth="220.0" />
+      <TextField fx:id="numDipCand" layoutX="303.0" layoutY="507.0" prefHeight="30.0" prefWidth="204.0" />
       <TextField fx:id="photoLib" layoutX="388.0" layoutY="67.0" prefHeight="36.0" prefWidth="220.0" />
-      <TextField fx:id="libPiece" layoutX="430.0" layoutY="396.0" prefHeight="36.0" prefWidth="220.0" />
-      <TextField fx:id="libDip" layoutX="430.0" layoutY="521.0" prefHeight="36.0" prefWidth="220.0" />
+      <TextField fx:id="libPiece" layoutX="430.0" layoutY="426.0" prefHeight="36.0" prefWidth="220.0" />
+      <TextField fx:id="libDip" layoutX="430.0" layoutY="551.0" prefHeight="36.0" prefWidth="220.0" />
+      <Label layoutX="165.0" layoutY="190.0" prefHeight="36.0" prefWidth="81.0" text="CONTACT :" />
+      <TextField fx:id="contact" layoutX="234.0" layoutY="192.0" prefHeight="30.0" prefWidth="122.0" />
+      <Label layoutX="384.0" layoutY="191.0" prefHeight="36.0" prefWidth="81.0" text="MAIL : " />
+      <TextField fx:id="mail" layoutX="429.0" layoutY="193.0" prefHeight="30.0" prefWidth="192.0" />
    </children>
 </AnchorPane>
