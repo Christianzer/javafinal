@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="645.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="sample.controllers.Inscription2Controllers" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="645.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.Inscription2Controllers">
    <children>
       <VBox prefHeight="645.0" prefWidth="141.0" style="-fx-background-color: #404040;" styleClass="-fx-text-fill">
          <children>
@@ -37,8 +37,8 @@
       <Label layoutX="166.0" layoutY="456.0" prefHeight="36.0" prefWidth="161.0" text="CERTIFICAT EMPLOYE :" />
       <Label layoutX="166.0" layoutY="501.0" prefHeight="36.0" prefWidth="185.0" text="EMPLOYE VOUS DES MINEURS :" />
       <Button layoutX="290.0" layoutY="581.0" mnemonicParsing="false" onMouseClicked="#enregistrer" prefHeight="46.0" prefWidth="279.0" text="ENREGISTER" />
-      <Button fx:id="ImgPlantation" layoutX="341.0" layoutY="68.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="130.0" text="CHOISIR IMAGE" />
-      <Button fx:id="certEmploye" layoutX="353.0" layoutY="456.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="122.0" text="CHOISIR IMAGE" />
+      <Button fx:id="ImgPlantation" layoutX="341.0" layoutY="68.0" mnemonicParsing="false" onAction="#AjouterCertPlant" prefHeight="36.0" prefWidth="130.0" text="CHOISIR IMAGE" />
+      <Button fx:id="certEmploye" layoutX="353.0" layoutY="456.0" mnemonicParsing="false" onAction="#AjoutEmpl" prefHeight="36.0" prefWidth="122.0" text="CHOISIR FICHIER" />
       <TextField fx:id="localisation" layoutX="369.0" layoutY="114.0" prefHeight="30.0" prefWidth="204.0" />
       <TextField fx:id="superficie" layoutX="368.0" layoutY="155.0" prefHeight="30.0" prefWidth="102.0" />
       <TextField fx:id="nombreEmpl" layoutX="370.0" layoutY="335.0" prefHeight="30.0" prefWidth="54.0" />

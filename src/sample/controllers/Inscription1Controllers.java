@@ -1,5 +1,6 @@
 package sample.controllers;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -17,10 +18,7 @@ import sample.Main;
 import sample.database.AgriConnexion;
 
 import javax.swing.*;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -159,6 +157,33 @@ public class Inscription1Controllers implements Initializable {
         }
     }
 
+    public void AjoutPhoto(ActionEvent actionEvent) throws FileNotFoundException {
+        filephoto = fileChooser.showOpenDialog(null);
+        if (filephoto != null){
+            photoLib.setText(filephoto.getAbsolutePath());
+        }
+        fileInputStreamPhoto = new FileInputStream(filephoto);
+        System.out.println(fileInputStreamPhoto);
+    }
+
+    public void AjoutPiece(ActionEvent actionEvent) throws FileNotFoundException {
+        filePiece = fileChooser.showOpenDialog(null);
+        if (filePiece != null){
+            libPiece.setText(filePiece.getAbsolutePath());
+        }
+        fileInputStreamPiece = new FileInputStream(filePiece);
+        System.out.println(fileInputStreamPiece);
+    }
+
+    public void AjoutDipl(ActionEvent actionEvent) throws FileNotFoundException {
+        fileDipl = fileChooser.showOpenDialog(null);
+        if (fileDipl != null) {
+            libDip.setText(fileDipl.getAbsolutePath());
+        }
+        fileInputStreamDipl = new FileInputStream(fileDipl);
+        System.out.println(fileInputStreamDipl);
+    }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -168,45 +193,59 @@ public class Inscription1Controllers implements Initializable {
         fileChooser.getExtensionFilters().addAll(
                 new FileChooser.ExtensionFilter("Tous les fichiers","*.*")
         );
-        photoCand.setOnAction(actionEvent -> {
-            filephoto = fileChooser.showOpenDialog(null);
-            if (filephoto != null){
-                photoLib.setText(filephoto.getAbsolutePath());
-            }
-        });
-        imgDip.setOnAction(actionEvent -> {
-            fileDipl = fileChooser.showOpenDialog(null);
-            if (fileDipl != null){
-                libDip.setText(fileDipl.getAbsolutePath());
-            }
-        });
-        imgPiece.setOnAction(actionEvent -> {
-            filePiece = fileChooser.showOpenDialog(null);
-            if (filePiece != null){
-                libPiece.setText(filePiece.getAbsolutePath());
-            }
-        });
-
     }
 
-    public void suivant(MouseEvent mouseEvent) throws SQLException, FileNotFoundException {
-        fileInputStreamPhoto = new FileInputStream(filephoto);
-        fileInputStreamDipl = new FileInputStream(fileDipl);
-        fileInputStreamPiece = new FileInputStream(filePiece);
-
-        /*
+    public void suivant(MouseEvent mouseEvent) throws SQLException {
         if (!"".equals(nomCand.getText()) && !"".equals(prenomsCand.getText()) && !"".equals(dateCand.getValue()) && !"".equals(lieuCand.getText()) && !"".equals(contact.getText()) && !"".equals(mail.getText())&& !"".equals(numPieceCand.getText()) && !"".equals(numDipCand.getText())){
             Main.setMail(mail.getText());
             String query = "{call INSERTCAND(?,?,?,?,?,?,?,?)}";
             PreparedStatement preparedStatement =AgriConnexion.getInstance().prepareCall(query);
             if(!"0".equals(typePiece.getSelectionModel().getSelectedIndex()) && !"0".equals(typeDipCand.getSelectionModel().getSelectedIndex())) {
-
-
+                preparedStatement.setBinaryStream(1,(InputStream)fileInputStreamPhoto,(int)filephoto.length());
+                preparedStatement.setString(2,nomCand.getText());
+                preparedStatement.setString(3,prenomsCand.getText());
+                preparedStatement.setString(4,dateCand.getValue().toString());
+                preparedStatement.setString(5,lieuCand.getText());
+                preparedStatement.setString(6,natioCand.getText());
+                preparedStatement.setString(7,contact.getText());
+                preparedStatement.setString(8,mail.getText());
+                int result =preparedStatement.executeUpdate();
+                if(result == 1){
+                    String query1 = "SELECT MAX(id_cand) as identifiant_cand FROM CANDIDATS";
+                    Statement statement = AgriConnexion.getInstance().createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+                    ResultSet resultSet = statement.executeQuery(query1);
+                    resultSet.next();
+                    int id_cand = Integer.parseInt(resultSet.getString("identifiant_cand"));
+                    Main.setIdentifiant_cand(id_cand);
+                    String queryPiece = "{call INSERTPIECE(?,?,?,?)}";
+                    PreparedStatement preparedStatement1 = AgriConnexion.getInstance().prepareStatement(queryPiece);
+                    preparedStatement1.setInt(1,typePiece.getSelectionModel().getSelectedIndex());
+                    preparedStatement1.setInt(2,id_cand);
+                    preparedStatement1.setString(3,numPieceCand.getText());
+                    preparedStatement1.setBinaryStream(4,(InputStream)fileInputStreamPiece,(int)filePiece.length());
+                    int resultatPiece = preparedStatement1.executeUpdate();
+                    if (resultatPiece == 1){
+                        String queryDiplome = "{call INSERTDIPLOME(?,?,?,?)}";
+                        PreparedStatement preparedStatement2 = AgriConnexion.getInstance().prepareStatement(queryDiplome);
+                        preparedStatement2.setInt(1,typeDipCand.getSelectionModel().getSelectedIndex());
+                        preparedStatement2.setInt(2,id_cand);
+                        preparedStatement2.setString(3,numDipCand.getText());
+                        preparedStatement2.setBinaryStream(4,(InputStream)fileInputStreamDipl,(int)fileDipl.length());
+                        int resultatDiplome = preparedStatement2.executeUpdate();
+                        if (resultatDiplome == 1){
+                            ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
+                            MenuChanger("Inscription2.fxml");
+                        }
+                    }
+                }
             }
         }
-        ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
-        MenuChanger("Inscription2.fxml");
+
+        /*
 
          */
-    }
+
+   }
+
+
 }

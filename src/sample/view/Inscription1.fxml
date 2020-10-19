@@ -40,9 +40,9 @@
       <Label layoutX="166.0" layoutY="504.0" prefHeight="36.0" prefWidth="130.0" text="NUMERO DIPLOME:" />
       <Label layoutX="166.0" layoutY="550.0" prefHeight="36.0" prefWidth="130.0" text="IMAGE DIPLOME :" />
       <Button layoutX="290.0" layoutY="591.0" mnemonicParsing="false" onMouseClicked="#suivant" prefHeight="46.0" prefWidth="279.0" text="SUIVANT" />
-      <Button fx:id="photoCand" layoutX="231.0" layoutY="68.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="130.0" text="CHOISIR IMAGE" />
-      <Button fx:id="imgPiece" layoutX="275.0" layoutY="426.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="130.0" text="CHOISIR IMAGE" />
-      <Button fx:id="imgDip" layoutX="288.0" layoutY="551.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="130.0" text="CHOISIR IMAGE" />
+      <Button fx:id="photoCand" layoutX="231.0" layoutY="68.0" mnemonicParsing="false" onAction="#AjoutPhoto" prefHeight="36.0" prefWidth="130.0" text="CHOISIR IMAGE" />
+      <Button fx:id="imgPiece" layoutX="275.0" layoutY="426.0" mnemonicParsing="false" onAction="#AjoutPiece" prefHeight="36.0" prefWidth="130.0" text="CHOISIR IMAGE" />
+      <Button fx:id="imgDip" layoutX="288.0" layoutY="551.0" mnemonicParsing="false" onAction="#AjoutDipl" prefHeight="36.0" prefWidth="130.0" text="CHOISIR IMAGE" />
       <TextField fx:id="nomCand" layoutX="214.0" layoutY="114.0" prefHeight="30.0" prefWidth="204.0" />
       <TextField fx:id="prenomsCand" layoutX="251.0" layoutY="155.0" prefHeight="30.0" prefWidth="350.0" />
       <DatePicker fx:id="dateCand" layoutX="296.0" layoutY="227.0" prefHeight="25.0" prefWidth="235.0" />
