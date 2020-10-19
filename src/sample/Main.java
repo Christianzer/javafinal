@@ -12,6 +12,7 @@ public class Main extends Application {
     private static String mail;
     private static String mdp;
 
+
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("view/connexion.fxml"));

@@ -66,6 +66,14 @@ public class MenuControllers implements Initializable {
         }
     }
 
+
+
+
+
+
+
+
+
     public void tableauBord(MouseEvent mouseEvent) {
         ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
         MenuChanger("menu.fxml");
@@ -73,6 +81,7 @@ public class MenuControllers implements Initializable {
 
     public void ajouterCandidat(MouseEvent mouseEvent) {
         ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
+        MenuChanger("Inscription1.fxml");
     }
 
     public void rendezVous(MouseEvent mouseEvent) {
@@ -95,12 +104,8 @@ public class MenuControllers implements Initializable {
         ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
     }
 
-    public void fermer(MouseEvent mouseEvent) {
-        Stage stage = (Stage) border.getScene().getWindow();
-        stage.close();
-    }
 
-    private void MenuChanger(String page){
+    public void MenuChanger(String page){
         Parent parent = null;
         try {
             parent = FXMLLoader.load(getClass().getResource("../view/"+page));
