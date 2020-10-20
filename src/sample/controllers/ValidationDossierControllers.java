@@ -12,10 +12,9 @@ import sample.Main;
 import sample.database.AgriConnexion;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
-import java.sql.CallableStatement;
-import java.sql.SQLException;
-import java.sql.Types;
+import java.sql.*;
 import java.util.ResourceBundle;
 
 public class ValidationDossierControllers implements Initializable {
@@ -61,7 +60,6 @@ public class ValidationDossierControllers implements Initializable {
         callableStatement.registerOutParameter(23,Types.INTEGER);
         callableStatement.registerOutParameter(24,Types.INTEGER);
         callableStatement.executeUpdate();
-
     }
     public void tableauBord(MouseEvent mouseEvent) {
         ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
@@ -107,12 +105,24 @@ public class ValidationDossierControllers implements Initializable {
         stage.show();
     }
 
-    public void valider(MouseEvent mouseEvent) {
+    public void valider(MouseEvent mouseEvent) throws SQLException {
+        String accept = "{call VALIDATION(?,?)}";
+        PreparedStatement preparedStatement = AgriConnexion.getInstance().prepareStatement(accept);
+        int etat = 2;
+        preparedStatement.setInt(1,etat);
+        preparedStatement.setInt(2,dossierId);
+        int resultat = preparedStatement.executeUpdate();
         ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
         MenuChanger("menu.fxml");
     }
 
-    public void rejeter(MouseEvent mouseEvent) {
+    public void rejeter(MouseEvent mouseEvent) throws SQLException {
+        String rejet = "{call VALIDATION(?,?)}";
+        PreparedStatement preparedStatement = AgriConnexion.getInstance().prepareStatement(rejet);
+        int etat = 3;
+        preparedStatement.setInt(1,etat);
+        preparedStatement.setInt(2,dossierId);
+        int resultat = preparedStatement.executeUpdate();
         ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
         MenuChanger("menu.fxml");
     }
