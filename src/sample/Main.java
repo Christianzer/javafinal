@@ -8,10 +8,17 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
     private static int identifiant_cand;
-    private static int identifiant_plant;
     private static String mail;
     private static String mdp;
+    private static int DossierId;
 
+    public static int getDossierId() {
+        return DossierId;
+    }
+
+    public static void setDossierId(int dossierId) {
+        DossierId = dossierId;
+    }
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -42,17 +49,10 @@ public class Main extends Application {
         return identifiant_cand;
     }
 
-    public static int getIdentifiant_plant() {
-        return identifiant_plant;
-    }
-
     public static void setIdentifiant_cand(int identifiant_cand) {
         Main.identifiant_cand = identifiant_cand;
     }
 
-    public static void setIdentifiant_plant(int identifiant_plant) {
-        Main.identifiant_plant = identifiant_plant;
-    }
 
 
 

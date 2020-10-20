@@ -14,6 +14,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import sample.Main;
 import sample.database.AgriConnexion;
 import sample.models.DossierInscription;
 
@@ -107,12 +108,16 @@ public class MenuControllers implements Initializable {
         } catch (SQLException sqlException) {
             sqlException.printStackTrace();
         }
+       tableauDossier.setOnMouseClicked(e->{
+           DossierInscription dossierInscription = (DossierInscription) tableauDossier.getSelectionModel().getSelectedItem();
+           Main.setDossierId(dossierInscription.getDossier());
+           System.out.println(Main.getDossierId());
+       });
     }
 
 
-
-
-
-
-
+    public void analyseDossier(MouseEvent mouseEvent) {
+        ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
+        MenuChanger("ValidationDossier.fxml");
+    }
 }
