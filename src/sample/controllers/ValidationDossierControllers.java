@@ -60,6 +60,7 @@ public class ValidationDossierControllers implements Initializable {
         callableStatement.registerOutParameter(23,Types.INTEGER);
         callableStatement.registerOutParameter(24,Types.INTEGER);
         callableStatement.executeUpdate();
+        //AFFICHER DANS LE TABLEAU LES ELEMENTS
     }
     public void tableauBord(MouseEvent mouseEvent) {
         ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
