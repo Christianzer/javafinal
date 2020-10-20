@@ -34,9 +34,6 @@ public class Inscription1Controllers implements Initializable {
     private File filephoto;
     private File filePiece;
     private File fileDipl;
-    private FileInputStream fileInputStreamPhoto;
-    private FileInputStream fileInputStreamPiece;
-    private FileInputStream fileInputStreamDipl;
     @FXML
     private Button photoCand;
 
@@ -159,29 +156,26 @@ public class Inscription1Controllers implements Initializable {
 
     public void AjoutPhoto(ActionEvent actionEvent) throws FileNotFoundException {
         filephoto = fileChooser.showOpenDialog(null);
+        System.out.println(filephoto.getName());
         if (filephoto != null){
-            photoLib.setText(filephoto.getAbsolutePath());
+            photoLib.setText(filephoto.getName());
         }
-        fileInputStreamPhoto = new FileInputStream(filephoto);
-        System.out.println(fileInputStreamPhoto);
+
     }
 
     public void AjoutPiece(ActionEvent actionEvent) throws FileNotFoundException {
         filePiece = fileChooser.showOpenDialog(null);
         if (filePiece != null){
-            libPiece.setText(filePiece.getAbsolutePath());
+            libPiece.setText(filePiece.getName());
         }
-        fileInputStreamPiece = new FileInputStream(filePiece);
-        System.out.println(fileInputStreamPiece);
     }
 
     public void AjoutDipl(ActionEvent actionEvent) throws FileNotFoundException {
         fileDipl = fileChooser.showOpenDialog(null);
         if (fileDipl != null) {
-            libDip.setText(fileDipl.getAbsolutePath());
+            libDip.setText(fileDipl.getName());
         }
-        fileInputStreamDipl = new FileInputStream(fileDipl);
-        System.out.println(fileInputStreamDipl);
+
     }
 
 
@@ -201,7 +195,7 @@ public class Inscription1Controllers implements Initializable {
             String query = "{call INSERTCAND(?,?,?,?,?,?,?,?)}";
             PreparedStatement preparedStatement =AgriConnexion.getInstance().prepareCall(query);
             if(!"0".equals(typePiece.getSelectionModel().getSelectedIndex()) && !"0".equals(typeDipCand.getSelectionModel().getSelectedIndex())) {
-                preparedStatement.setBinaryStream(1,(InputStream)fileInputStreamPhoto,(int)filephoto.length());
+                preparedStatement.setString(1,filephoto.getName());
                 preparedStatement.setString(2,nomCand.getText());
                 preparedStatement.setString(3,prenomsCand.getText());
                 preparedStatement.setString(4,dateCand.getValue().toString());
@@ -222,7 +216,7 @@ public class Inscription1Controllers implements Initializable {
                     preparedStatement1.setInt(1,typePiece.getSelectionModel().getSelectedIndex());
                     preparedStatement1.setInt(2,id_cand);
                     preparedStatement1.setString(3,numPieceCand.getText());
-                    preparedStatement1.setBinaryStream(4,(InputStream)fileInputStreamPiece,(int)filePiece.length());
+                    preparedStatement1.setString(4,filePiece.getName());
                     int resultatPiece = preparedStatement1.executeUpdate();
                     if (resultatPiece == 1){
                         String queryDiplome = "{call INSERTDIPLOME(?,?,?,?)}";
@@ -230,7 +224,7 @@ public class Inscription1Controllers implements Initializable {
                         preparedStatement2.setInt(1,typeDipCand.getSelectionModel().getSelectedIndex());
                         preparedStatement2.setInt(2,id_cand);
                         preparedStatement2.setString(3,numDipCand.getText());
-                        preparedStatement2.setBinaryStream(4,(InputStream)fileInputStreamDipl,(int)fileDipl.length());
+                        preparedStatement2.setString(4,fileDipl.getName());
                         int resultatDiplome = preparedStatement2.executeUpdate();
                         if (resultatDiplome == 1){
                             ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
@@ -245,7 +239,7 @@ public class Inscription1Controllers implements Initializable {
 
          */
 
-   }
+    }
 
 
 }

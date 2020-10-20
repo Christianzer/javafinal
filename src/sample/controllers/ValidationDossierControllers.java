@@ -33,15 +33,15 @@ public class ValidationDossierControllers implements Initializable {
     }
 
     public void getAfficherDossier() throws SQLException {
-        String afficher = "{call SELECTDOSSIER(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}";
+        String afficher = "{}";
         CallableStatement callableStatement = AgriConnexion.getInstance().prepareCall(afficher);
         callableStatement.setInt(1,dossierId);
         callableStatement.registerOutParameter(2,Types.VARCHAR);
         callableStatement.registerOutParameter(3,Types.VARCHAR);
-        callableStatement.registerOutParameter(4, Types.BLOB);
+        callableStatement.registerOutParameter(4, Types.VARCHAR);
         callableStatement.registerOutParameter(5,Types.VARCHAR);
         callableStatement.registerOutParameter(6,Types.VARCHAR);
-        callableStatement.registerOutParameter(7,Types.BLOB);
+        callableStatement.registerOutParameter(7,Types.VARCHAR);
         callableStatement.registerOutParameter(8,Types.VARCHAR);
         callableStatement.registerOutParameter(9,Types.VARCHAR);
         callableStatement.registerOutParameter(10, Types.VARCHAR);
@@ -49,16 +49,14 @@ public class ValidationDossierControllers implements Initializable {
         callableStatement.registerOutParameter(12,Types.VARCHAR);
         callableStatement.registerOutParameter(13, Types.VARCHAR);
         callableStatement.registerOutParameter(14,Types.VARCHAR);
-        callableStatement.registerOutParameter(15,Types.BLOB);
+        callableStatement.registerOutParameter(15,Types.VARCHAR);
         callableStatement.registerOutParameter(16, Types.VARCHAR);
         callableStatement.registerOutParameter(17,Types.VARCHAR);
-        callableStatement.registerOutParameter(18,Types.VARCHAR);
-        callableStatement.registerOutParameter(19,Types.BLOB);
+        callableStatement.registerOutParameter(18,Types.INTEGER);
+        callableStatement.registerOutParameter(19,Types.VARCHAR);
         callableStatement.registerOutParameter(20,Types.INTEGER);
-        callableStatement.registerOutParameter(21,Types.VARCHAR);
+        callableStatement.registerOutParameter(21,Types.INTEGER);
         callableStatement.registerOutParameter(22, Types.INTEGER);
-        callableStatement.registerOutParameter(23,Types.INTEGER);
-        callableStatement.registerOutParameter(24,Types.INTEGER);
         callableStatement.executeUpdate();
         //AFFICHER DANS LE TABLEAU LES ELEMENTS
     }

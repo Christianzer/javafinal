@@ -33,8 +33,6 @@ public class Inscription2Controllers implements Initializable {
     private FileChooser fileChooser;
     private File filePlant;
     private File fileEmpl;
-    private FileInputStream fileInputStreamPlant;
-    private FileInputStream fileInputStreamEmpl;
     private int id_candi;
     private int id_plant;
     private String email;
@@ -161,7 +159,7 @@ public class Inscription2Controllers implements Initializable {
                 PreparedStatement preparedStatement = AgriConnexion.getInstance().prepareStatement(plant);
                 preparedStatement.setString(1,localisation.getText());
                 preparedStatement.setString(2,superficie.getText());
-                preparedStatement.setBinaryStream(3,(InputStream)fileInputStreamPlant,(int)filePlant.length());
+                preparedStatement.setString(3,filePlant.getName());
                 int resultat = preparedStatement.executeUpdate();
                 if (resultat == 1){
                     String query1 = "SELECT MAX(ID_PLANT) AS IDENTIFIANT_PLANT FROM PLANTATION_CANDIDATS";
@@ -192,7 +190,7 @@ public class Inscription2Controllers implements Initializable {
                             preparedStat.setInt(2,nbreFem);
                             preparedStat.setInt(3,sal);
                             preparedStat.setInt(4,mineur.getSelectionModel().getSelectedIndex());
-                            preparedStat.setBinaryStream(5,(InputStream)fileInputStreamEmpl,(int)fileEmpl.length());
+                            preparedStat.setString(5,fileEmpl.getName());
                             int resultat3 = preparedStat.executeUpdate();
                             String maxid = "SELECT MAX(ID_EMPL_CAND) AS identifiant_empl FROM EMPLOYE_CANDIDATS";
                             Statement statement1 = AgriConnexion.getInstance().createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
@@ -226,19 +224,16 @@ public class Inscription2Controllers implements Initializable {
     public void AjouterCertPlant(ActionEvent actionEvent) throws FileNotFoundException {
         filePlant = fileChooser.showOpenDialog(null);
         if (filePlant != null){
-            libPlantation.setText(filePlant.getAbsolutePath());
+            libPlantation.setText(filePlant.getName());
         }
-        fileInputStreamPlant = new FileInputStream(filePlant);
-        System.out.println(fileInputStreamPlant);
     }
 
     public void AjoutEmpl(ActionEvent actionEvent) throws FileNotFoundException {
         fileEmpl = fileChooser.showOpenDialog(null);
         if (fileEmpl != null){
-            libcertEmpl.setText(fileEmpl.getAbsolutePath());
+            libcertEmpl.setText(fileEmpl.getName());
         }
-        fileInputStreamEmpl = new FileInputStream(fileEmpl);
-        System.out.println(fileInputStreamEmpl);
+
     }
 
     public void tableauBord(MouseEvent mouseEvent) {
