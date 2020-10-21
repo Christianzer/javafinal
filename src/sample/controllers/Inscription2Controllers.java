@@ -208,6 +208,11 @@ public class Inscription2Controllers implements Initializable {
                                 preparedStatement3.setString(6,datainscription);
                                 int resultat4 = preparedStatement3.executeUpdate();
                                 if (resultat4 == 1){
+                                    String maxdoc = "SELECT MAX(DOSSIER) AS dossier FROM dossier_inscriptions";
+                                    Statement statdoc = AgriConnexion.getInstance().createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+                                    ResultSet resultdoc = statdoc.executeQuery(maxdoc);
+                                    resultSet1.next();
+                                    int dossierid = resultdoc.getInt("dossier");
                                     ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
                                     MenuChanger("FinInscription.fxml");
                                 }

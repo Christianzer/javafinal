@@ -3,52 +3,58 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" fx:controller="sample.controllers.FinInscriptionControllers" minWidth="-Infinity" prefHeight="645.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="645.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.FinInscriptionControllers">
    <children>
-      <VBox prefHeight="645.0" prefWidth="141.0" style="-fx-background-color: #404040;" styleClass="-fx-text-fill">
+      <Label alignment="CENTER" layoutX="78.0" layoutY="136.0" prefHeight="46.0" prefWidth="491.0" text="FELICITATION POUR VOTRE INSCRIPTION!!" textAlignment="RIGHT">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="66.0" layoutY="192.0" prefHeight="87.0" prefWidth="491.0" text="Les informations pour pouvoir suivre le parcours de votre dossier a travers l'application mobile et le site web sont:" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="479.0" layoutY="339.0" prefHeight="38.0" prefWidth="182.0" text="IDENTIFIANT ">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="491.0" layoutY="410.0" prefHeight="46.0" prefWidth="158.0" text="MOT DE PASSE ">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="identifiant" disable="true" layoutX="56.0" layoutY="339.0" prefHeight="46.0" prefWidth="411.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="mdp" disable="true" layoutX="56.0" layoutY="410.0" prefHeight="46.0" prefWidth="411.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <HBox layoutX="-5.0" layoutY="-3.0" prefHeight="104.0" prefWidth="686.0" style="-fx-background-color: #1cc88a;">
          <children>
-            <Button fx:id="bt11" blendMode="OVERLAY" mnemonicParsing="false" onMouseClicked="#tableauBord" prefHeight="46.0" prefWidth="160.0" text="TABLEAU DE BORD" textFill="#464343" />
-            <Button fx:id="bt111" blendMode="OVERLAY" mnemonicParsing="false" onMouseClicked="#ajouterCandidat" prefHeight="46.0" prefWidth="147.0" text="AJOUTER CANDIDAT" textFill="#464343" />
-            <Button fx:id="bt1111" blendMode="OVERLAY" mnemonicParsing="false" onMouseClicked="#rendezVous" prefHeight="46.0" prefWidth="154.0" text="RENDEZ VOUS" textFill="#464343" />
-            <Button fx:id="bt11111" blendMode="OVERLAY" mnemonicParsing="false" onMouseClicked="#evaluationCafe" prefHeight="46.0" prefWidth="144.0" text="EVALUATION CAFE" textFill="#464343" />
-            <Button fx:id="bt111111" blendMode="OVERLAY" mnemonicParsing="false" onMouseClicked="#evaluationCacao" prefHeight="46.0" prefWidth="144.0" text="EVALUATION CACAO" textFill="#464343" />
-            <Button fx:id="bt1111111" blendMode="OVERLAY" mnemonicParsing="false" onMouseClicked="#deliberationCafe" prefHeight="46.0" prefWidth="144.0" text="DELIBERATION CAFE" textFill="#464343" />
-            <Button fx:id="bt1" blendMode="OVERLAY" mnemonicParsing="false" onMouseClicked="#deliberationCacao" prefHeight="46.0" prefWidth="160.0" text="DELIBEARTION CACAO" textFill="#464343" />
+            <ImageView fitHeight="104.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@favicon.png" />
+               </image>
+            </ImageView>
+            <Label prefHeight="88.0" prefWidth="348.0" text="            CACC" textFill="#fff9f9">
+               <font>
+                  <Font name="Bodoni MT Black" size="36.0" />
+               </font>
+            </Label>
          </children>
-      </VBox>
-      <Label alignment="CENTER" layoutX="153.0" layoutY="25.0" prefHeight="67.0" prefWidth="491.0" text="MERCI D'AVOIR PARTICIPER A NOTRE CONCOURS " textAlignment="RIGHT">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label alignment="CENTER" layoutX="163.0" layoutY="105.0" prefHeight="101.0" prefWidth="491.0" text="LES INFORMATIONS CI-DESSOUS VOUS PERMETTRONS DE VOUS CONNECTER A L'APPLICATION MOBILE COMME WEB" textAlignment="CENTER" wrapText="true">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label alignment="CENTER" layoutX="158.0" layoutY="243.0" prefHeight="67.0" prefWidth="182.0" text="IDENTIFIANT :">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label alignment="CENTER" layoutX="176.0" layoutY="343.0" prefHeight="67.0" prefWidth="158.0" text="MOT DE PASSE :">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <TextField fx:id="identifiant" disable="true" layoutX="334.0" layoutY="243.0" prefHeight="67.0" prefWidth="288.0">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="mdp" disable="true" layoutX="334.0" layoutY="343.0" prefHeight="67.0" prefWidth="288.0">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </TextField>
+      </HBox>
+      <Button fx:id="retour" layoutX="244.0" layoutY="508.0" mnemonicParsing="false" onMouseClicked="#retour" prefHeight="46.0" prefWidth="141.0" style="-fx-background-color: #4e73df;" text="RETOUR" />
    </children>
 </AnchorPane>

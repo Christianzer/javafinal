@@ -5,26 +5,49 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="645.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.Inscription1Controllers">
    <children>
-      <VBox prefHeight="645.0" prefWidth="141.0" style="-fx-background-color: #404040;" styleClass="-fx-text-fill">
+      <VBox prefHeight="645.0" prefWidth="157.0" style="-fx-background-color: #1cc88a;" styleClass="-fx-text-fill">
          <children>
-            <Button fx:id="bt11" blendMode="OVERLAY" mnemonicParsing="false" onMouseClicked="#tableauBord" prefHeight="46.0" prefWidth="160.0" text="TABLEAU DE BORD" textFill="#464343" />
-            <Button fx:id="bt111" blendMode="OVERLAY" mnemonicParsing="false" onMouseClicked="#ajouterCandidat" prefHeight="46.0" prefWidth="147.0" text="AJOUTER CANDIDAT" textFill="#464343" />
-            <Button fx:id="bt1111" blendMode="OVERLAY" mnemonicParsing="false" onMouseClicked="#rendezVous" prefHeight="46.0" prefWidth="154.0" text="RENDEZ VOUS" textFill="#464343" />
-            <Button fx:id="bt11111" blendMode="OVERLAY" mnemonicParsing="false" onMouseClicked="#evaluationCafe" prefHeight="46.0" prefWidth="144.0" text="EVALUATION CAFE" textFill="#464343" />
-            <Button fx:id="bt111111" blendMode="OVERLAY" mnemonicParsing="false" onMouseClicked="#evaluationCacao" prefHeight="46.0" prefWidth="144.0" text="EVALUATION CACAO" textFill="#464343" />
-            <Button fx:id="bt1111111" blendMode="OVERLAY" mnemonicParsing="false" onMouseClicked="#deliberationCafe" prefHeight="46.0" prefWidth="144.0" text="DELIBERATION CAFE" textFill="#464343" />
-            <Button fx:id="bt1" blendMode="OVERLAY" mnemonicParsing="false" onMouseClicked="#deliberationCacao" prefHeight="46.0" prefWidth="160.0" text="DELIBEARTION CACAO" textFill="#464343" />
+            <Button fx:id="bt11" blendMode="OVERLAY" mnemonicParsing="false" onMouseClicked="#tableauBord" prefHeight="46.0" prefWidth="160.0" style="-fx-background-color: #1cc88a;" text="TABLEAU DE BORD">
+               <font>
+                  <Font name="Arial Black" size="11.0" />
+               </font></Button>
+            <Button fx:id="bt111" blendMode="OVERLAY" mnemonicParsing="false" onMouseClicked="#ajouterCandidat" prefHeight="46.0" prefWidth="162.0" style="-fx-background-color: #1cc88a;" text="AJOUTER CANDIDAT">
+               <font>
+                  <Font name="Arial Black" size="11.0" />
+               </font></Button>
+            <Button fx:id="bt1111" blendMode="OVERLAY" mnemonicParsing="false" onMouseClicked="#rendezVous" prefHeight="46.0" prefWidth="156.0" style="-fx-background-color: #1cc88a;" text="RENDEZ VOUS" textFill="#464343">
+               <font>
+                  <Font name="Arial Black" size="11.0" />
+               </font></Button>
+            <Button fx:id="bt11111" blendMode="OVERLAY" mnemonicParsing="false" onMouseClicked="#evaluationCafe" prefHeight="46.0" prefWidth="158.0" style="-fx-background-color: #1cc88a;" text="EVALUATION CAFE" textFill="#464343">
+               <font>
+                  <Font name="Arial Black" size="11.0" />
+               </font></Button>
+            <Button fx:id="bt111111" blendMode="OVERLAY" mnemonicParsing="false" onMouseClicked="#evaluationCacao" prefHeight="46.0" prefWidth="157.0" style="-fx-background-color: #1cc88a;" text="EVALUATION CACAO" textFill="#464343">
+               <font>
+                  <Font name="Arial Black" size="11.0" />
+               </font></Button>
+            <Button fx:id="bt1111111" blendMode="OVERLAY" mnemonicParsing="false" onMouseClicked="#deliberationCafe" prefHeight="46.0" prefWidth="157.0" style="-fx-background-color: #1cc88a;" text="DELIBERATION CAFE" textFill="#464343">
+               <font>
+                  <Font name="Arial Black" size="11.0" />
+               </font></Button>
+            <Button fx:id="bt1" blendMode="OVERLAY" mnemonicParsing="false" onMouseClicked="#deliberationCacao" prefHeight="46.0" prefWidth="160.0" style="-fx-background-color: #1cc88a;" text="DELIBEARTION CACAO" textFill="#464343">
+               <font>
+                  <Font name="Arial Black" size="11.0" />
+               </font></Button>
          </children>
       </VBox>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="220.0" layoutY="7.0" prefHeight="46.0" prefWidth="323.0" text="INFORMATION SUR LE CANDIDAT">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="234.0" layoutY="11.0" prefHeight="46.0" prefWidth="323.0" text="INFORMATION SUR LE CANDIDAT" textFill="#4e73df">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </Label>
       <Label layoutX="166.0" layoutY="71.0" prefHeight="36.0" prefWidth="81.0" text="PHOTO:" />
@@ -39,25 +62,30 @@
       <Label layoutX="166.0" layoutY="468.0" prefHeight="36.0" prefWidth="122.0" text="TYPE DIPLOME:" />
       <Label layoutX="166.0" layoutY="504.0" prefHeight="36.0" prefWidth="130.0" text="NUMERO DIPLOME:" />
       <Label layoutX="166.0" layoutY="550.0" prefHeight="36.0" prefWidth="130.0" text="IMAGE DIPLOME :" />
-      <Button layoutX="290.0" layoutY="591.0" mnemonicParsing="false" onMouseClicked="#suivant" prefHeight="46.0" prefWidth="279.0" text="SUIVANT" />
-      <Button fx:id="photoCand" layoutX="231.0" layoutY="68.0" mnemonicParsing="false" onAction="#AjoutPhoto" prefHeight="36.0" prefWidth="130.0" text="CHOISIR IMAGE" />
-      <Button fx:id="imgPiece" layoutX="275.0" layoutY="426.0" mnemonicParsing="false" onAction="#AjoutPiece" prefHeight="36.0" prefWidth="130.0" text="CHOISIR IMAGE" />
-      <Button fx:id="imgDip" layoutX="288.0" layoutY="551.0" mnemonicParsing="false" onAction="#AjoutDipl" prefHeight="36.0" prefWidth="130.0" text="CHOISIR IMAGE" />
-      <TextField fx:id="nomCand" layoutX="214.0" layoutY="114.0" prefHeight="30.0" prefWidth="204.0" />
-      <TextField fx:id="prenomsCand" layoutX="251.0" layoutY="155.0" prefHeight="30.0" prefWidth="350.0" />
-      <DatePicker fx:id="dateCand" layoutX="296.0" layoutY="227.0" prefHeight="25.0" prefWidth="235.0" />
-      <TextField fx:id="lieuCand" layoutX="303.0" layoutY="265.0" prefHeight="30.0" prefWidth="204.0" />
-      <TextField fx:id="natioCand" layoutX="279.0" layoutY="305.0" prefHeight="30.0" prefWidth="204.0" />
-      <ComboBox fx:id="typePiece" layoutX="278.0" layoutY="348.0" prefWidth="220.0" />
-      <TextField fx:id="numPieceCand" layoutX="284.0" layoutY="385.0" prefHeight="30.0" prefWidth="204.0" />
-      <ComboBox fx:id="typeDipCand" layoutX="295.0" layoutY="472.0" prefWidth="220.0" />
-      <TextField fx:id="numDipCand" layoutX="303.0" layoutY="507.0" prefHeight="30.0" prefWidth="204.0" />
-      <TextField fx:id="photoLib" layoutX="388.0" layoutY="67.0" prefHeight="36.0" prefWidth="220.0" />
-      <TextField fx:id="libPiece" layoutX="430.0" layoutY="426.0" prefHeight="36.0" prefWidth="220.0" />
-      <TextField fx:id="libDip" layoutX="430.0" layoutY="551.0" prefHeight="36.0" prefWidth="220.0" />
+      <Button layoutX="522.0" layoutY="603.0" mnemonicParsing="false" onMouseClicked="#suivant" prefHeight="36.0" prefWidth="95.0" style="-fx-background-color: #4e73df;" text="SUIVANT" />
+      <Button fx:id="photoCand" layoutX="291.0" layoutY="71.0" mnemonicParsing="false" onAction="#AjoutPhoto" prefHeight="36.0" prefWidth="130.0" text="CHOISIR IMAGE" />
+      <Button fx:id="imgPiece" layoutX="296.0" layoutY="426.0" mnemonicParsing="false" onAction="#AjoutPiece" prefHeight="36.0" prefWidth="130.0" text="CHOISIR IMAGE" />
+      <Button fx:id="imgDip" layoutX="296.0" layoutY="551.0" mnemonicParsing="false" onAction="#AjoutDipl" prefHeight="36.0" prefWidth="130.0" text="CHOISIR IMAGE" />
+      <TextField fx:id="nomCand" layoutX="293.0" layoutY="115.0" prefHeight="30.0" prefWidth="204.0" />
+      <TextField fx:id="prenomsCand" layoutX="293.0" layoutY="155.0" prefHeight="30.0" prefWidth="204.0" />
+      <DatePicker fx:id="dateCand" layoutX="296.0" layoutY="227.0" prefHeight="25.0" prefWidth="204.0" />
+      <TextField fx:id="lieuCand" layoutX="295.0" layoutY="265.0" prefHeight="30.0" prefWidth="204.0" />
+      <TextField fx:id="natioCand" layoutX="295.0" layoutY="305.0" prefHeight="30.0" prefWidth="204.0" />
+      <ComboBox fx:id="typePiece" layoutX="295.0" layoutY="345.0" prefHeight="30.0" prefWidth="204.0" />
+      <TextField fx:id="numPieceCand" layoutX="295.0" layoutY="385.0" prefHeight="30.0" prefWidth="204.0" />
+      <ComboBox fx:id="typeDipCand" layoutX="295.0" layoutY="472.0" prefHeight="25.0" prefWidth="204.0" />
+      <TextField fx:id="numDipCand" layoutX="295.0" layoutY="507.0" prefHeight="30.0" prefWidth="204.0" />
+      <TextField fx:id="photoLib" layoutX="446.0" layoutY="74.0" prefHeight="30.0" prefWidth="220.0" />
+      <TextField fx:id="libPiece" layoutX="446.0" layoutY="432.0" prefHeight="30.0" prefWidth="220.0" />
+      <TextField fx:id="libDip" layoutX="446.0" layoutY="557.0" prefHeight="30.0" prefWidth="220.0" />
       <Label layoutX="165.0" layoutY="190.0" prefHeight="36.0" prefWidth="81.0" text="CONTACT :" />
-      <TextField fx:id="contact" layoutX="234.0" layoutY="192.0" prefHeight="30.0" prefWidth="122.0" />
-      <Label layoutX="384.0" layoutY="191.0" prefHeight="36.0" prefWidth="81.0" text="MAIL : " />
-      <TextField fx:id="mail" layoutX="429.0" layoutY="193.0" prefHeight="30.0" prefWidth="192.0" />
+      <TextField fx:id="contact" layoutX="295.0" layoutY="192.0" prefHeight="30.0" prefWidth="122.0" />
+      <Label layoutX="424.0" layoutY="189.0" prefHeight="36.0" prefWidth="44.0" text="MAIL : " />
+      <TextField fx:id="mail" layoutX="474.0" layoutY="194.0" prefHeight="30.0" prefWidth="192.0" />
+      <ImageView fitHeight="55.0" fitWidth="73.0" layoutX="158.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@favicon.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

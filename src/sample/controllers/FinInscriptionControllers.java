@@ -20,37 +20,6 @@ public class FinInscriptionControllers implements Initializable {
     public TextField identifiant;
     public TextField mdp;
 
-    public void tableauBord(MouseEvent mouseEvent) {
-        ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
-        MenuChanger("menu.fxml");
-    }
-
-    public void ajouterCandidat(MouseEvent mouseEvent) {
-        ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
-        MenuChanger("Inscription1.fxml");
-    }
-
-    public void rendezVous(MouseEvent mouseEvent) {
-        ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
-    }
-
-    public void evaluationCafe(MouseEvent mouseEvent) {
-        ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
-    }
-
-    public void evaluationCacao(MouseEvent mouseEvent) {
-        ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
-    }
-
-    public void deliberationCafe(MouseEvent mouseEvent) {
-        ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
-    }
-
-    public void deliberationCacao(MouseEvent mouseEvent) {
-        ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
-    }
-
-
     public void MenuChanger(String page){
         Parent parent = null;
         try {
@@ -67,5 +36,10 @@ public class FinInscriptionControllers implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         identifiant.setText(Main.getMail());
         mdp.setText(Main.getMdp());
+    }
+
+    public void retour(MouseEvent mouseEvent) {
+        ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
+        MenuChanger("menu.fxml");
     }
 }

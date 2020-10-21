@@ -209,7 +209,7 @@ public class Inscription1Controllers implements Initializable {
                     Statement statement = AgriConnexion.getInstance().createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
                     ResultSet resultSet = statement.executeQuery(query1);
                     resultSet.next();
-                    int id_cand = Integer.parseInt(resultSet.getString("identifiant_cand"));
+                    int id_cand = resultSet.getInt("identifiant_cand");
                     Main.setIdentifiant_cand(id_cand);
                     String queryPiece = "{call INSERTPIECE(?,?,?,?)}";
                     PreparedStatement preparedStatement1 = AgriConnexion.getInstance().prepareStatement(queryPiece);
