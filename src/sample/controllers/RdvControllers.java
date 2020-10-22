@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -19,10 +20,7 @@ import sample.models.DossierPris;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.CallableStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Types;
+import java.sql.*;
 import java.util.ResourceBundle;
 
 public class RdvControllers implements Initializable {
@@ -35,6 +33,7 @@ public class RdvControllers implements Initializable {
     public TableColumn<DossierPris,String> datardv;
     public TableColumn<DossierPris,Integer> datadossier;
     public TextField numdossier;
+    public DatePicker dtrdv;
     ResultSet res = null;
 
 
@@ -120,7 +119,20 @@ public class RdvControllers implements Initializable {
         });
     }
 
-    public void valider(MouseEvent mouseEvent) {
-        String query = "{}";
+    public void valider(MouseEvent mouseEvent) throws SQLException {
+        String query = "{call RENDEZVOUS(?,?)}";
+        int dossiernumero = Integer.parseInt(numdossier.getText());
+        String daterdv = dtrdv.getValue().toString();
+        System.out.println(dossiernumero);
+        PreparedStatement stat = AgriConnexion.getInstance().prepareCall(query);
+        stat.setInt(1,dossiernumero);
+        stat.setString(2,daterdv);
+        int result = stat.executeUpdate();
+        if (result == 1){
+            numdossier.setText("");
+            dtrdv.getEditor().clear();
+            dtrdv.setValue(null);
+            this.getDossierPrix();
+        }
     }
 }

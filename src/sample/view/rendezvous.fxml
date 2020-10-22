@@ -85,7 +85,7 @@
             </Label>
             <TextField fx:id="numdossier" layoutX="12.0" layoutY="76.0" prefHeight="25.0" prefWidth="157.0" />
             <Button layoutX="404.0" layoutY="74.0" mnemonicParsing="false" onMouseClicked="#valider" prefHeight="29.0" prefWidth="91.0" style="-fx-background-color: #4e73df;" text="VALIDER" />
-            <DatePicker layoutX="208.0" layoutY="76.0" />
+            <DatePicker layoutX="208.0" fx:id="dtrdv" layoutY="76.0" />
          </children>
       </Pane>
       <Label alignment="CENTER" layoutX="167.0" layoutY="249.0" prefHeight="29.0" prefWidth="413.0" text="Liste des candidats admis pour les rendez-vous" textFill="#4e73df">
