@@ -1,5 +1,9 @@
 package sample.controllers;
 
+
+import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -9,6 +13,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import sample.Main;
@@ -21,7 +27,9 @@ import java.sql.*;
 import java.util.ResourceBundle;
 
 public class ValidationDossierControllers implements Initializable {
-    public Label numDossier;
+
+    public ImageView imageCand;
+    public Label dossierid;
     private int dossierId;
 
     private int docid;
@@ -46,17 +54,12 @@ public class ValidationDossierControllers implements Initializable {
     @FXML
     private TextField dipl;
 
-    @FXML
-    private Hyperlink imagepiece;
 
     @FXML
     private TextField numdipl;
 
     @FXML
     private TextField loacl;
-
-    @FXML
-    private Hyperlink imagedipl;
 
     @FXML
     private TextField superf;
@@ -67,8 +70,6 @@ public class ValidationDossierControllers implements Initializable {
     @FXML
     private TextField methode;
 
-    @FXML
-    private Hyperlink certplan;
 
     @FXML
     private TextField nbreempl;
@@ -85,18 +86,13 @@ public class ValidationDossierControllers implements Initializable {
     @FXML
     private Hyperlink certempl;
 
-    @FXML
-    private TextField contact;
-
-    @FXML
-    private Hyperlink photocand;
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         dossierId = Main.getDossierId();
         System.out.println(dossierId);
-        numDossier.setText("DOSSIER NUMERO :"+dossierId);
+        dossierid.setText("DOSSIER NUMERO : "+String.valueOf(dossierId));
         try {
             this.getAfficherDossier();
         } catch (SQLException sqlException) {
@@ -130,10 +126,32 @@ public class ValidationDossierControllers implements Initializable {
         callableStatement.registerOutParameter(21,Types.INTEGER);
         callableStatement.registerOutParameter(22, Types.INTEGER);
         callableStatement.executeUpdate();
-        String nom = callableStatement.getString(2);
-        System.out.println(nom);
-
-
+        numdipl.setText(callableStatement.getString(2));
+        String imageDipl = callableStatement.getString(3);
+        numpiece.setText(callableStatement.getString(4));
+        String imagePiece = callableStatement.getString(5);
+        String photoCand = callableStatement.getString(6);
+        nomcand.setText(callableStatement.getString(7));
+        prenomCand.setText(callableStatement.getString(8));
+        datenaiss.setText(callableStatement.getString(9));
+        nationalite.setText(callableStatement.getString(10));
+        methode.setText(callableStatement.getString(11));
+        typecult.setText(callableStatement.getString(12));
+        dipl.setText(callableStatement.getString(13));
+        piece.setText(callableStatement.getString(14));
+        String certifiPlant = callableStatement.getString(15);
+        loacl.setText(callableStatement.getString(16));
+        superf.setText(callableStatement.getString(17));
+        int min = callableStatement.getInt(18);
+        if (min == 1){
+            mineur.setText("Oui");
+        }else {
+            mineur.setText("Non");
+        }
+        String certEmpl = callableStatement.getString(19);
+        nbreempl.setText(String.valueOf(callableStatement.getInt(20)));
+        nbrefemme.setText(String.valueOf(callableStatement.getInt(21)));
+        salaire.setText(String.valueOf(callableStatement.getInt(22)));
         //AFFICHER DANS LE TABLEAU LES ELEMENTS
     }
     public void tableauBord(MouseEvent mouseEvent) {

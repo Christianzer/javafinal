@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -54,57 +53,48 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <Label fx:id="numDossier" alignment="CENTER" contentDisplay="CENTER" layoutX="288.0" layoutY="19.0" prefHeight="64.0" prefWidth="353.0" text="DOSSIER " textAlignment="CENTER" textFill="#4e73df" wrapText="true">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <Label layoutX="386.0" layoutY="133.0" prefHeight="17.0" prefWidth="60.0" text="Prénoms:" />
-      <Label layoutX="166.0" layoutY="176.0" prefHeight="17.0" prefWidth="72.0" text="Nationnalité:" />
+      <Label layoutX="166.0" layoutY="177.0" prefHeight="17.0" prefWidth="60.0" text="Prénoms:" />
+      <Label layoutX="466.0" layoutY="176.0" prefHeight="17.0" prefWidth="72.0" text="Nationnalité:" />
       <Label layoutX="339.0" layoutY="265.0" text="N° Pièce:" />
       <Label layoutX="166.0" layoutY="265.0" prefHeight="17.0" prefWidth="66.0" text=" Pièce:" />
       <Label layoutX="162.0" layoutY="311.0" prefHeight="17.0" prefWidth="78.0" text="Diplome:" />
       <Label layoutX="163.0" layoutY="357.0" prefHeight="23.0" prefWidth="112.0" text="Localisat° Plantation:" />
       <Label layoutX="429.0" layoutY="360.0" text="Superficie Plantation:" />
       <Label layoutX="160.0" layoutY="399.0" prefHeight="17.0" prefWidth="98.0" text="Type de Culture:" />
-      <Label layoutX="356.0" layoutY="515.0" text="Salaire Moyen:" />
+      <Label layoutX="356.0" layoutY="485.0" text="Salaire Moyen:" />
       <Label layoutX="430.0" layoutY="399.0" text="Méthode de Culture:" />
-      <Label layoutX="161.0" layoutY="432.0" prefHeight="17.0" prefWidth="108.0" text="Certificat Plantation:" />
-      <Label layoutX="166.0" layoutY="470.0" prefHeight="17.0" prefWidth="91.0" text="Nbre Employé:" />
-      <Label layoutX="441.0" layoutY="471.0" text="Nbre de Femme:" />
-      <Label layoutX="159.0" layoutY="518.0" text="Employé Mineur:" />
+      <Label layoutX="166.0" layoutY="440.0" prefHeight="17.0" prefWidth="91.0" text="Nbre Employé:" />
+      <Label layoutX="441.0" layoutY="441.0" text="Nbre de Femme:" />
+      <Label layoutX="159.0" layoutY="488.0" text="Employé Mineur:" />
       <Label layoutX="169.0" layoutY="130.0" prefHeight="24.0" prefWidth="66.0" text="Nom:" />
       <Label layoutX="384.0" layoutY="310.0" text="N° Diplome:" />
       <Label layoutX="168.0" layoutY="216.0" prefHeight="17.0" prefWidth="108.0" text="Date de Naissance:" />
       <TextField fx:id="nomcand" disable="true" layoutX="226.0" layoutY="129.0" />
-      <TextField fx:id="prenomCand" disable="true" layoutX="454.0" layoutY="129.0" prefHeight="25.0" prefWidth="129.0" />
+      <TextField fx:id="prenomCand" disable="true" layoutX="234.0" layoutY="173.0" prefHeight="25.0" prefWidth="214.0" />
       <TextField fx:id="datenaiss" disable="true" layoutX="284.0" layoutY="212.0" />
-      <TextField fx:id="nationalite" disable="true" layoutX="254.0" layoutY="172.0" />
+      <TextField fx:id="nationalite" disable="true" layoutX="551.0" layoutY="172.0" prefHeight="25.0" prefWidth="112.0" />
       <TextField fx:id="piece" disable="true" layoutX="204.0" layoutY="261.0" prefHeight="25.0" prefWidth="122.0" />
       <TextField fx:id="numpiece" disable="true" layoutX="396.0" layoutY="261.0" prefHeight="25.0" prefWidth="122.0" />
       <TextField fx:id="dipl" disable="true" layoutX="216.0" layoutY="308.0" prefHeight="25.0" prefWidth="149.0" />
-      <Hyperlink fx:id="imagepiece" layoutX="543.0" layoutY="261.0" prefHeight="23.0" prefWidth="110.0" text="voir image" />
       <TextField fx:id="numdipl" disable="true" layoutX="459.0" layoutY="306.0" prefHeight="25.0" prefWidth="122.0" />
       <TextField fx:id="loacl" disable="true" layoutX="285.0" layoutY="356.0" prefHeight="25.0" prefWidth="112.0" />
-      <Hyperlink fx:id="imagedipl" layoutX="602.0" layoutY="305.0" text="voir image" />
       <TextField fx:id="superf" disable="true" layoutX="547.0" layoutY="356.0" prefHeight="25.0" prefWidth="122.0" />
       <TextField fx:id="typecult" disable="true" layoutX="273.0" layoutY="395.0" prefHeight="25.0" prefWidth="129.0" />
       <TextField fx:id="methode" disable="true" layoutX="547.0" layoutY="395.0" prefHeight="25.0" prefWidth="122.0" />
-      <Hyperlink fx:id="certplan" layoutX="283.0" layoutY="430.0" text="Voir image" />
-      <TextField fx:id="nbreempl" disable="true" layoutX="278.0" layoutY="466.0" />
-      <TextField fx:id="nbrefemme" disable="true" layoutX="550.0" layoutY="466.0" prefHeight="25.0" prefWidth="122.0" />
-      <TextField fx:id="mineur" disable="true" layoutX="258.0" layoutY="514.0" prefHeight="25.0" prefWidth="78.0" />
-      <TextField fx:id="salaire" disable="true" layoutX="448.0" layoutY="511.0" prefHeight="25.0" prefWidth="72.0" />
-      <Label layoutX="172.0" layoutY="555.0" prefHeight="17.0" prefWidth="108.0" text="Certificat Employé:" />
-      <Hyperlink fx:id="certempl" layoutX="289.0" layoutY="553.0" text="Voir fichier" />
+      <TextField fx:id="nbreempl" disable="true" layoutX="278.0" layoutY="436.0" />
+      <TextField fx:id="nbrefemme" disable="true" layoutX="550.0" layoutY="436.0" prefHeight="25.0" prefWidth="122.0" />
+      <TextField fx:id="mineur" disable="true" layoutX="258.0" layoutY="484.0" prefHeight="25.0" prefWidth="78.0" />
+      <TextField fx:id="salaire" disable="true" layoutX="448.0" layoutY="481.0" prefHeight="25.0" prefWidth="72.0" />
       <ImageView fitHeight="64.0" fitWidth="78.0" layoutX="188.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@favicon.png" />
          </image>
       </ImageView>
-      <Label layoutX="432.0" layoutY="174.0" prefHeight="17.0" prefWidth="49.0" text="Contact:" />
-      <TextField fx:id="contact" alignment="CENTER" disable="true" layoutX="504.0" layoutY="170.0" />
-      <Label layoutX="166.0" layoutY="98.0" prefHeight="17.0" prefWidth="108.0" text="Photo candidat :" />
-      <Hyperlink fx:id="photocand" layoutX="268.0" layoutY="95.0" prefHeight="23.0" prefWidth="89.0" text="voir image" />
+      <Label fx:id="dossierid" alignment="CENTER" contentDisplay="CENTER" layoutX="306.0" layoutY="6.0" prefHeight="74.0" prefWidth="149.0" text="Label" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="101.0" fitWidth="139.0" layoutX="527.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>
