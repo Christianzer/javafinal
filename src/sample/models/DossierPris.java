@@ -1,25 +1,26 @@
 package sample.models;
 
 public class DossierPris {
-    private int dossierId;
-    private String nomCand;
-    private String prenomsCand;
-    private String DateRdv;
+    public int dossierid;
+    public String nomcand;
+    public String prenomsCand;
+    public String typeculture;
+    public String daterdv;
 
-    public int getDossierId() {
-        return dossierId;
+    public int getDossierid() {
+        return dossierid;
     }
 
-    public void setDossierId(int dossierId) {
-        this.dossierId = dossierId;
+    public void setDossierid(int dossierid) {
+        this.dossierid = dossierid;
     }
 
-    public String getNomCand() {
-        return nomCand;
+    public String getNomcand() {
+        return nomcand;
     }
 
-    public void setNomCand(String nomCand) {
-        this.nomCand = nomCand;
+    public void setNomcand(String nomcand) {
+        this.nomcand = nomcand;
     }
 
     public String getPrenomsCand() {
@@ -30,18 +31,27 @@ public class DossierPris {
         this.prenomsCand = prenomsCand;
     }
 
-    public String getDateRdv() {
-        return DateRdv;
+    public String getTypeculture() {
+        return typeculture;
     }
 
-    public void setDateRdv(String dateRdv) {
-        DateRdv = dateRdv;
+    public void setTypeculture(String typeculture) {
+        this.typeculture = typeculture;
     }
 
-    public DossierPris(int dossierId, String nomCand, String prenomsCand, String dateRdv) {
-        this.dossierId = dossierId;
-        this.nomCand = nomCand;
+    public String getDaterdv() {
+        return daterdv;
+    }
+
+    public void setDaterdv(String daterdv) {
+        this.daterdv = daterdv;
+    }
+
+    public DossierPris(int dossierid, String nomcand, String prenomsCand, String typeculture, String daterdv) {
+        this.dossierid = dossierid;
+        this.nomcand = nomcand;
         this.prenomsCand = prenomsCand;
-        DateRdv = dateRdv;
+        this.typeculture = typeculture;
+        this.daterdv = daterdv;
     }
 }

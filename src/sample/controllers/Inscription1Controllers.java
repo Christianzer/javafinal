@@ -91,7 +91,9 @@ public class Inscription1Controllers implements Initializable {
     }
 
     public void rendezVous(MouseEvent mouseEvent) {
+
         ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
+        MenuChanger("rendezvous.fxml");
     }
 
     public void evaluationCafe(MouseEvent mouseEvent) {

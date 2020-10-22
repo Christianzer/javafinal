@@ -83,7 +83,9 @@ public class MenuControllers implements Initializable {
     }
 
     public void rendezVous(MouseEvent mouseEvent) {
+
         ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
+        MenuChanger("rendezvous.fxml");
     }
 
     public void evaluationCafe(MouseEvent mouseEvent) {
@@ -137,6 +139,10 @@ public class MenuControllers implements Initializable {
         this.tableauDossier.setItems(this.donneIns);
     }
 
+    public void analyseDossier(MouseEvent mouseEvent) {
+        ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
+        MenuChanger("ValidationDossier.fxml");
+    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
@@ -152,9 +158,4 @@ public class MenuControllers implements Initializable {
        });
     }
 
-
-    public void analyseDossier(MouseEvent mouseEvent) {
-        ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
-        MenuChanger("ValidationDossier.fxml");
-    }
 }
