@@ -8,6 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -35,6 +36,41 @@ public class MenuControllers implements Initializable {
     public TableColumn<DossierInscription,String> datanom;
     public TableColumn<DossierInscription,String> datatypecult;
     public TableColumn<DossierInscription,String> dataetat;
+    public Label part;
+    public Label att;
+    public Label adm;
+    public Label refus;
+    private int nbreCand;
+    private int nbreAtt;
+    private int nbreRefus;
+    private int nbreVal;
+
+    public void nbrePart() throws SQLException {
+        String queryCand = "select count(DOSSIER) as nbrepart from DOSSIER_INSCRIPTIONS";
+        String queryAtt = "select count(DOSSIER) as nbreAtt from DOSSIER_INSCRIPTIONS where VALIDATION = 1";
+        String queryAdm = "select count(DOSSIER) as nbreAdm from DOSSIER_INSCRIPTIONS where VALIDATION = 2";
+        String queryRef = "select count(DOSSIER) as nbreRef from DOSSIER_INSCRIPTIONS where VALIDATION = 3";
+        Statement statCand = AgriConnexion.getInstance().createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+        Statement statAtt = AgriConnexion.getInstance().createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+        Statement statAdm = AgriConnexion.getInstance().createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+        Statement statRef = AgriConnexion.getInstance().createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+        ResultSet resultCand = statCand.executeQuery(queryCand);
+        resultCand.next();
+        nbreCand = resultCand.getInt("nbrepart");
+        ResultSet resultAtt = statAtt.executeQuery(queryAtt);
+        resultAtt.next();
+        nbreAtt = resultAtt.getInt("nbreAtt");
+        ResultSet resultAdm = statAdm.executeQuery(queryAdm);
+        resultAdm.next();
+        nbreVal = resultAdm.getInt("nbreAdm");
+        ResultSet resultRef = statRef.executeQuery(queryRef);
+        resultRef.next();
+        nbreRefus = resultRef.getInt("nbreRef");
+        part.setText(String.valueOf(nbreCand));
+        adm.setText(String.valueOf(nbreVal));
+        att.setText(String.valueOf(nbreAtt));
+        refus.setText(String.valueOf(nbreRefus));
+    }
 
     public void tableauBord(MouseEvent mouseEvent) {
         ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
@@ -104,7 +140,8 @@ public class MenuControllers implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
-            getDossier();
+            this.getDossier();
+            this.nbrePart();
         } catch (SQLException sqlException) {
             sqlException.printStackTrace();
         }

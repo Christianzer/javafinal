@@ -1,11 +1,14 @@
 package sample.controllers;
 
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import sample.Main;
@@ -20,6 +23,75 @@ import java.util.ResourceBundle;
 public class ValidationDossierControllers implements Initializable {
     public Label numDossier;
     private int dossierId;
+
+    private int docid;
+    @FXML
+    private TextField nomcand;
+
+    @FXML
+    private TextField prenomCand;
+
+    @FXML
+    private TextField datenaiss;
+
+    @FXML
+    private TextField nationalite;
+
+    @FXML
+    private TextField piece;
+
+    @FXML
+    private TextField numpiece;
+
+    @FXML
+    private TextField dipl;
+
+    @FXML
+    private Hyperlink imagepiece;
+
+    @FXML
+    private TextField numdipl;
+
+    @FXML
+    private TextField loacl;
+
+    @FXML
+    private Hyperlink imagedipl;
+
+    @FXML
+    private TextField superf;
+
+    @FXML
+    private TextField typecult;
+
+    @FXML
+    private TextField methode;
+
+    @FXML
+    private Hyperlink certplan;
+
+    @FXML
+    private TextField nbreempl;
+
+    @FXML
+    private TextField nbrefemme;
+
+    @FXML
+    private TextField mineur;
+
+    @FXML
+    private TextField salaire;
+
+    @FXML
+    private Hyperlink certempl;
+
+    @FXML
+    private TextField contact;
+
+    @FXML
+    private Hyperlink photocand;
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         dossierId = Main.getDossierId();
@@ -33,7 +105,7 @@ public class ValidationDossierControllers implements Initializable {
     }
 
     public void getAfficherDossier() throws SQLException {
-        String afficher = "{}";
+        String afficher = "{call SELECTDOSSIER(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}";
         CallableStatement callableStatement = AgriConnexion.getInstance().prepareCall(afficher);
         callableStatement.setInt(1,dossierId);
         callableStatement.registerOutParameter(2,Types.VARCHAR);
@@ -58,6 +130,10 @@ public class ValidationDossierControllers implements Initializable {
         callableStatement.registerOutParameter(21,Types.INTEGER);
         callableStatement.registerOutParameter(22, Types.INTEGER);
         callableStatement.executeUpdate();
+        String nom = callableStatement.getString(2);
+        System.out.println(nom);
+
+
         //AFFICHER DANS LE TABLEAU LES ELEMENTS
     }
     public void tableauBord(MouseEvent mouseEvent) {

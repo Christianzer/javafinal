@@ -211,10 +211,18 @@ public class Inscription2Controllers implements Initializable {
                                     String maxdoc = "SELECT MAX(DOSSIER) AS dossier FROM dossier_inscriptions";
                                     Statement statdoc = AgriConnexion.getInstance().createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
                                     ResultSet resultdoc = statdoc.executeQuery(maxdoc);
-                                    resultSet1.next();
+                                    resultdoc.next();
                                     int dossierid = resultdoc.getInt("dossier");
-                                    ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
-                                    MenuChanger("FinInscription.fxml");
+                                    int message = 2;
+                                    String api = "insert into NOTIFICATIONAPI(DOSSIERID,MESSAGE) VALUES (?,?)";
+                                    PreparedStatement apistat = AgriConnexion.getInstance().prepareStatement(api);
+                                    apistat.setInt(1,dossierid);
+                                    apistat.setInt(2,message);
+                                    int apiresult = apistat.executeUpdate();
+                                    if (apiresult == 1){
+                                        ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
+                                        MenuChanger("FinInscription.fxml");
+                                    }
                                 }
 
                             }
