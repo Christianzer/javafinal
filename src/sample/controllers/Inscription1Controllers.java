@@ -98,10 +98,7 @@ public class Inscription1Controllers implements Initializable {
 
     public void evaluationCafe(MouseEvent mouseEvent) {
         ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
-    }
-
-    public void evaluationCacao(MouseEvent mouseEvent) {
-        ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
+        MenuChanger("connexionjury.fxml");
     }
 
     public void deliberationCafe(MouseEvent mouseEvent) {

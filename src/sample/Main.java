@@ -11,6 +11,33 @@ public class Main extends Application {
     private static String mail;
     private static String mdp;
     private static int DossierId;
+    private static int idvisite;
+    private static String identifiantjury;
+    private static String nomjury;
+
+    public static int getIdvisite() {
+        return idvisite;
+    }
+
+    public static void setIdvisite(int idvisite) {
+        Main.idvisite = idvisite;
+    }
+
+    public static String getIdentifiantjury() {
+        return identifiantjury;
+    }
+
+    public static void setIdentifiantjury(String identifiantjury) {
+        Main.identifiantjury = identifiantjury;
+    }
+
+    public static String getNomjury() {
+        return nomjury;
+    }
+
+    public static void setNomjury(String nomjury) {
+        Main.nomjury = nomjury;
+    }
 
     public static int getDossierId() {
         return DossierId;

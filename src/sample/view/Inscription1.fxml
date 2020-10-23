@@ -27,11 +27,7 @@
                <font>
                   <Font name="Arial Black" size="11.0" />
                </font></Button>
-            <Button fx:id="bt11111" blendMode="OVERLAY" mnemonicParsing="false" onMouseClicked="#evaluationCafe" prefHeight="46.0" prefWidth="158.0" style="-fx-background-color: #1cc88a;" text="EVALUATION CAFE" textFill="#464343">
-               <font>
-                  <Font name="Arial Black" size="11.0" />
-               </font></Button>
-            <Button fx:id="bt111111" blendMode="OVERLAY" mnemonicParsing="false" onMouseClicked="#evaluationCacao" prefHeight="46.0" prefWidth="157.0" style="-fx-background-color: #1cc88a;" text="EVALUATION CACAO" textFill="#464343">
+            <Button fx:id="bt11111" blendMode="OVERLAY" mnemonicParsing="false" onMouseClicked="#evaluationCafe" prefHeight="46.0" prefWidth="158.0" style="-fx-background-color: #1cc88a;" text="EVALUATION VISITE" textFill="#464343">
                <font>
                   <Font name="Arial Black" size="11.0" />
                </font></Button>

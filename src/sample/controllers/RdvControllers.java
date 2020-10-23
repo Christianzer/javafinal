@@ -54,11 +54,9 @@ public class RdvControllers implements Initializable {
 
     public void evaluationCafe(MouseEvent mouseEvent) {
         ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
+        MenuChanger("connexionjury");
     }
 
-    public void evaluationCacao(MouseEvent mouseEvent) {
-        ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
-    }
 
     public void deliberationCafe(MouseEvent mouseEvent) {
         ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
