@@ -42,14 +42,13 @@
                </font></Button>
          </children>
       </VBox>
-      <TableView fx:id="tableauDossier" layoutX="167.0" layoutY="327.0" prefHeight="226.0" prefWidth="509.0">
+      <TableView fx:id="tableauCacao" layoutX="167.0" layoutY="327.0" prefHeight="226.0" prefWidth="509.0">
         <columns>
-          <TableColumn fx:id="datadossier" prefWidth="55.0" text="Dossier" />
-          <TableColumn fx:id="datanom" prefWidth="78.0" text="Nom" />
-            <TableColumn fx:id="dataprenoms" prefWidth="106.0" text="Prénoms" />
-            <TableColumn fx:id="datatypecult" prefWidth="97.0" text="Moy Générale" />
-            <TableColumn fx:id="dataetat" prefWidth="100.0" text="Classement" />
-            <TableColumn prefWidth="76.0" text="Résultat" />
+          <TableColumn fx:id="dossiercacao" prefWidth="55.0" text="Dossier" />
+          <TableColumn fx:id="candidat" prefWidth="157.0" text="Candidat" />
+            <TableColumn fx:id="moyg" prefWidth="95.0" text="Moy Générale" />
+            <TableColumn fx:id="classe" prefWidth="77.0" text="Classement" />
+            <TableColumn fx:id="resultat" prefWidth="124.0" text="Résultat" />
         </columns>
       </TableView>
       <ImageView fitHeight="46.0" fitWidth="66.0" layoutX="157.0" pickOnBounds="true" preserveRatio="true">
@@ -79,10 +78,10 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="12.0" layoutY="76.0" prefHeight="25.0" prefWidth="167.0" />
-            <Button layoutX="423.0" layoutY="74.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="72.0" style="-fx-background-color: #4e73df;" text="VALIDER" />
-            <TextField layoutX="217.0" layoutY="76.0" prefHeight="25.0" prefWidth="183.0" />
-            <Button layoutX="216.0" layoutY="76.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="72.0" text="CHOISIR" />
+            <TextField fx:id="docnum" layoutX="14.0" layoutY="76.0" prefHeight="25.0" prefWidth="103.0" />
+            <Button fx:id="validation" layoutX="423.0" layoutY="74.0" mnemonicParsing="false" onAction="#validation" prefHeight="29.0" prefWidth="72.0" style="-fx-background-color: #4e73df;" text="VALIDER" />
+            <TextField fx:id="imgcacao" layoutX="286.0" layoutY="76.0" prefHeight="25.0" prefWidth="114.0" />
+            <Button layoutX="216.0" layoutY="76.0" mnemonicParsing="false" onAction="#AjouterCacao" prefHeight="29.0" prefWidth="72.0" text="CHOISIR" />
          </children>
       </Pane>
       <Label layoutX="166.0" layoutY="286.0" prefHeight="29.0" prefWidth="157.0" text="Liste des candidats " textFill="#4e73df">

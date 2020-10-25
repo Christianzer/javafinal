@@ -136,7 +136,14 @@ public class RecompenseCafeControllers implements Initializable {
         statement.setInt(3,numdossierid);
         int result = statement.executeUpdate();
         if (result == 1){
-            String recomp = "{}";
+            String recomp = "{call RECOMPENSEFINALCAFE(?)}";
+            PreparedStatement rec = AgriConnexion.getInstance().prepareStatement(recomp);
+            rec.setInt(1,numdossierid);
+            int re = rec.executeUpdate();
+            if (re == 1){
+                ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+                MenuChanger("recompensecafe.fxml");
+            }
         }
     }
 
