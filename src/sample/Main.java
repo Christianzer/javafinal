@@ -14,6 +14,15 @@ public class Main extends Application {
     private static int idvisite;
     private static String identifiantjury;
     private static String nomjury;
+    private static int dossiervisite;
+
+    public static int getDossiervisite() {
+        return dossiervisite;
+    }
+
+    public static void setDossiervisite(int dossiervisite) {
+        Main.dossiervisite = dossiervisite;
+    }
 
     public static int getIdvisite() {
         return idvisite;

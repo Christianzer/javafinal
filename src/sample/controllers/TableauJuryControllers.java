@@ -81,6 +81,7 @@ public class TableauJuryControllers implements Initializable {
     }
 
     public void rendezVous(MouseEvent mouseEvent) {
+
         ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
         MenuChanger("rendezvous.fxml");
     }
@@ -90,14 +91,17 @@ public class TableauJuryControllers implements Initializable {
         MenuChanger("connexionjury.fxml");
     }
 
-
     public void deliberationCafe(MouseEvent mouseEvent) {
         ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
+        MenuChanger("recompensecafe.fxml");
     }
 
     public void deliberationCacao(MouseEvent mouseEvent) {
         ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
+        MenuChanger("recompensecacao.fxml");
     }
+
+
     public void MenuChanger(String page){
         Parent parent = null;
         try {
@@ -121,6 +125,8 @@ public class TableauJuryControllers implements Initializable {
         tableauDossierJury.setOnMouseClicked(e->{
             DossierVisiter dossierVisiter = (DossierVisiter) tableauDossierJury.getSelectionModel().getSelectedItem();
             int docapp = dossierVisiter.getVisiteid();
+            int docvisite = dossierVisiter.getDossiervisiteid();
+            Main.setDossiervisite(docvisite);
             Main.setIdvisite(docapp);
             idtype = dossierVisiter.getTypevisite();
         });
@@ -131,6 +137,7 @@ public class TableauJuryControllers implements Initializable {
             ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
             MenuChanger("evaluationcafe.fxml");
         }else {
+            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
             MenuChanger("evaluationcacao.fxml");
         }
     }

@@ -103,13 +103,16 @@ public class Inscription1Controllers implements Initializable {
 
     public void deliberationCafe(MouseEvent mouseEvent) {
         ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
+        MenuChanger("recompensecafe.fxml");
     }
 
     public void deliberationCacao(MouseEvent mouseEvent) {
         ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
+        MenuChanger("recompensecacao.fxml");
     }
 
-    private void MenuChanger(String page){
+
+    public void MenuChanger(String page){
         Parent parent = null;
         try {
             parent = FXMLLoader.load(getClass().getResource("../view/"+page));

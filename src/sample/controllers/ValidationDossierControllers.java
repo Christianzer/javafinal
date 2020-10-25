@@ -154,6 +154,7 @@ public class ValidationDossierControllers implements Initializable {
         salaire.setText(String.valueOf(callableStatement.getInt(22)));
         //AFFICHER DANS LE TABLEAU LES ELEMENTS
     }
+
     public void tableauBord(MouseEvent mouseEvent) {
         ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
         MenuChanger("menu.fxml");
@@ -165,23 +166,24 @@ public class ValidationDossierControllers implements Initializable {
     }
 
     public void rendezVous(MouseEvent mouseEvent) {
+
         ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
+        MenuChanger("rendezvous.fxml");
     }
 
     public void evaluationCafe(MouseEvent mouseEvent) {
         ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
-    }
-
-    public void evaluationCacao(MouseEvent mouseEvent) {
-        ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
+        MenuChanger("connexionjury.fxml");
     }
 
     public void deliberationCafe(MouseEvent mouseEvent) {
         ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
+        MenuChanger("recompensecafe.fxml");
     }
 
     public void deliberationCacao(MouseEvent mouseEvent) {
         ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
+        MenuChanger("recompensecacao.fxml");
     }
 
 
@@ -197,7 +199,6 @@ public class ValidationDossierControllers implements Initializable {
         stage.setScene(scene2);
         stage.show();
     }
-
     public void valider(MouseEvent mouseEvent) throws SQLException {
         String accept = "{call VALIDATION(?,?)}";
         PreparedStatement preparedStatement = AgriConnexion.getInstance().prepareStatement(accept);

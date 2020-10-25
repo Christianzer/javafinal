@@ -95,10 +95,12 @@ public class MenuControllers implements Initializable {
 
     public void deliberationCafe(MouseEvent mouseEvent) {
         ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
+        MenuChanger("recompensecafe.fxml");
     }
 
     public void deliberationCacao(MouseEvent mouseEvent) {
         ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
+        MenuChanger("recompensecacao.fxml");
     }
 
 

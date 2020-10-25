@@ -36,7 +36,6 @@ public class RdvControllers implements Initializable {
     public DatePicker dtrdv;
     ResultSet res = null;
 
-
     public void tableauBord(MouseEvent mouseEvent) {
         ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
         MenuChanger("menu.fxml");
@@ -48,24 +47,39 @@ public class RdvControllers implements Initializable {
     }
 
     public void rendezVous(MouseEvent mouseEvent) {
+
         ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
         MenuChanger("rendezvous.fxml");
     }
 
     public void evaluationCafe(MouseEvent mouseEvent) {
         ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
-        MenuChanger("connexionjury");
+        MenuChanger("connexionjury.fxml");
     }
-
 
     public void deliberationCafe(MouseEvent mouseEvent) {
         ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
+        MenuChanger("recompensecafe.fxml");
     }
 
     public void deliberationCacao(MouseEvent mouseEvent) {
         ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
+        MenuChanger("recompensecacao.fxml");
     }
 
+
+    public void MenuChanger(String page){
+        Parent parent = null;
+        try {
+            parent = FXMLLoader.load(getClass().getResource("../view/"+page));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Stage stage = new Stage();
+        Scene scene2 = new Scene(parent);
+        stage.setScene(scene2);
+        stage.show();
+    }
     public void getDossierPrix() throws SQLException {
         this.donnePrix = FXCollections.observableArrayList();
         String query = "call AFFICHERDOSSIERPRIS(?)";
@@ -89,18 +103,6 @@ public class RdvControllers implements Initializable {
 
     }
 
-    public void MenuChanger(String page){
-        Parent parent = null;
-        try {
-            parent = FXMLLoader.load(getClass().getResource("../view/"+page));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        Stage stage = new Stage();
-        Scene scene2 = new Scene(parent);
-        stage.setScene(scene2);
-        stage.show();
-    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

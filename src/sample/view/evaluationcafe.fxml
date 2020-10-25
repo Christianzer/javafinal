@@ -64,19 +64,19 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="140.0" layoutY="78.0" prefHeight="25.0" prefWidth="85.0" />
+            <TextField fx:id="espacearbre" layoutX="140.0" layoutY="78.0" prefHeight="25.0" prefWidth="85.0" />
             <Label layoutX="5.0" layoutY="46.0" prefHeight="20.0" prefWidth="72.0" text="Etat abres">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="140.0" layoutY="45.0" prefHeight="25.0" prefWidth="85.0" />
+            <TextField fx:id="etatarbre" layoutX="140.0" layoutY="45.0" prefHeight="25.0" prefWidth="85.0" />
             <Label layoutX="5.0" layoutY="81.0" text="Espacement Abres">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="140.0" layoutY="111.0" prefHeight="25.0" prefWidth="85.0" />
+            <TextField fx:id="proprete" layoutX="140.0" layoutY="111.0" prefHeight="25.0" prefWidth="85.0" />
          </children>
       </Pane>
       <Pane layoutX="440.0" layoutY="58.0" prefHeight="181.0" prefWidth="232.0" style="-fx-background-color: rgb(202,202,202);">
@@ -91,19 +91,19 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="140.0" layoutY="78.0" prefHeight="25.0" prefWidth="85.0" />
+            <TextField fx:id="fruit" layoutX="140.0" layoutY="78.0" prefHeight="25.0" prefWidth="85.0" />
             <Label layoutX="5.0" layoutY="46.0" prefHeight="20.0" prefWidth="107.0" text="Beauté cabosse">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="140.0" layoutY="45.0" prefHeight="25.0" prefWidth="85.0" />
+            <TextField fx:id="cabosse" layoutX="140.0" layoutY="45.0" prefHeight="25.0" prefWidth="85.0" />
             <Label layoutX="7.0" layoutY="81.0" text="Fruit sain">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="140.0" layoutY="111.0" prefHeight="25.0" prefWidth="85.0" />
+            <TextField fx:id="gout" layoutX="140.0" layoutY="111.0" prefHeight="25.0" prefWidth="85.0" />
          </children>
       </Pane>
       <Pane layoutX="166.0" layoutY="259.0" prefHeight="181.0" prefWidth="232.0" style="-fx-background-color: rgb(202,202,202);">
@@ -118,19 +118,19 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="140.0" layoutY="78.0" prefHeight="25.0" prefWidth="85.0" />
+            <TextField fx:id="qualite" layoutX="140.0" layoutY="78.0" prefHeight="25.0" prefWidth="85.0" />
             <Label layoutX="5.0" layoutY="46.0" prefHeight="20.0" prefWidth="72.0" text="Humidité">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="140.0" layoutY="45.0" prefHeight="25.0" prefWidth="85.0" />
+            <TextField fx:id="humidite" layoutX="140.0" layoutY="45.0" prefHeight="25.0" prefWidth="85.0" />
             <Label layoutX="5.0" layoutY="81.0" text="Qualité engrais">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="140.0" layoutY="111.0" prefHeight="25.0" prefWidth="85.0" />
+            <TextField fx:id="sol" layoutX="140.0" layoutY="111.0" prefHeight="25.0" prefWidth="85.0" />
          </children>
       </Pane>
       <Pane layoutX="440.0" layoutY="259.0" prefHeight="181.0" prefWidth="232.0" style="-fx-background-color: rgb(202,202,202);">
@@ -150,9 +150,9 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="140.0" layoutY="45.0" prefHeight="25.0" prefWidth="85.0" />
-            <TextField layoutX="140.0" layoutY="79.0" prefHeight="25.0" prefWidth="85.0" />
-            <TextField layoutX="140.0" layoutY="111.0" prefHeight="25.0" prefWidth="85.0" />
+            <TextField fx:id="kantite" layoutX="140.0" layoutY="45.0" prefHeight="25.0" prefWidth="85.0" />
+            <TextField fx:id="secahge" layoutX="140.0" layoutY="79.0" prefHeight="25.0" prefWidth="85.0" />
+            <TextField fx:id="conversation" layoutX="140.0" layoutY="111.0" prefHeight="25.0" prefWidth="85.0" />
             <Label layoutX="7.0" layoutY="114.0" text="Conservation">
                <font>
                   <Font size="14.0" />
@@ -177,17 +177,17 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="140.0" layoutY="45.0" prefHeight="25.0" prefWidth="85.0" />
+            <TextField fx:id="bomus" layoutX="140.0" layoutY="45.0" prefHeight="25.0" prefWidth="85.0" />
             <Label layoutX="5.0" layoutY="81.0" text="Appreciation">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <ComboBox layoutX="140.0" layoutY="79.0" prefHeight="25.0" prefWidth="86.0" />
-            <TextArea layoutX="140.0" layoutY="107.0" prefHeight="53.0" prefWidth="86.0" />
+            <ComboBox fx:id="appreciation" layoutX="140.0" layoutY="79.0" prefHeight="25.0" prefWidth="86.0" />
+            <TextArea fx:id="commentaire" layoutX="140.0" layoutY="107.0" prefHeight="53.0" prefWidth="86.0" />
          </children>
       </Pane>
-      <Button layoutX="486.0" layoutY="514.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="128.0" style="-fx-background-color: #4e73df;" text="Valider">
+      <Button layoutX="486.0" layoutY="514.0" mnemonicParsing="false" onAction="#validercafe" prefHeight="39.0" prefWidth="128.0" style="-fx-background-color: #4e73df;" text="Valider">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
