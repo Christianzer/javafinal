@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -32,7 +33,7 @@ public class EvaluationCafeControllers implements Initializable {
 
     public int idvisitedoc;
 
-    DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+    DateFormat format = new SimpleDateFormat("dd-MM-yyyy");
     Date date = new Date();
     public String datanote = format.format(date);
 
@@ -192,7 +193,10 @@ public class EvaluationCafeControllers implements Initializable {
                     System.out.println("pas ok");
                 }
             }
-
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Information Dialog");
+            alert.setHeaderText("Evaluation effectue avec succes");
+            alert.showAndWait();
             ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
             MenuChanger("TableauJury.fxml");
         }

@@ -7,10 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -129,10 +126,20 @@ public class RdvControllers implements Initializable {
         stat.setString(2,daterdv);
         int result = stat.executeUpdate();
         if (result == 1){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Information Dialog");
+            alert.setHeaderText("Mise en place du rendez-vous effectue avec succes");
+            alert.showAndWait();
             numdossier.setText("");
             dtrdv.getEditor().clear();
             dtrdv.setValue(null);
             this.getDossierPrix();
+
+        }else {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Information Dialog");
+            alert.setHeaderText("Dossier inexistant");
+            alert.showAndWait();
         }
     }
 }

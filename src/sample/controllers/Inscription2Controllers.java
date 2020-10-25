@@ -150,7 +150,7 @@ public class Inscription2Controllers implements Initializable {
 
 
     public void enregistrer(MouseEvent mouseEvent) throws SQLException {
-        DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        DateFormat format = new SimpleDateFormat("dd-MM-yyyy");
         Date date = new Date();
         String datainscription = format.format(date);
         if (!"".equals(localisation.getText()) && !"".equals(superficie.getText()) && !"".equals(localisation.getText()) && !"0".equals(typeCulture.getSelectionModel().getSelectedIndex()) && !"0".equals(methode.getSelectionModel().getSelectedIndex())){

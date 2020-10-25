@@ -8,10 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
@@ -43,7 +40,7 @@ public class RecompenseCafeControllers implements Initializable {
     public TableColumn<DossierCafe,String> recompresultat;
     public TextField numdoc;
     public TextField imglib;
-    DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+    DateFormat format = new SimpleDateFormat("dd-MM-yyyy");
     Date date = new Date();
     public String daterecomp = format.format(date);
     private FileChooser fileChooser;
@@ -141,8 +138,17 @@ public class RecompenseCafeControllers implements Initializable {
             rec.setInt(1,numdossierid);
             int re = rec.executeUpdate();
             if (re == 1){
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Information Dialog");
+                alert.setHeaderText("Recompense delivre avec succes");
+                alert.showAndWait();
                 ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
                 MenuChanger("recompensecafe.fxml");
+            }else {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Information Dialog");
+                alert.setHeaderText("Dossier inexistant");
+                alert.showAndWait();
             }
         }
     }

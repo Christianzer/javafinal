@@ -10,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -206,8 +207,15 @@ public class ValidationDossierControllers implements Initializable {
         preparedStatement.setInt(1,etat);
         preparedStatement.setInt(2,dossierId);
         int resultat = preparedStatement.executeUpdate();
-        ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
-        MenuChanger("menu.fxml");
+        if (resultat == 1){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Information Dialog");
+            alert.setHeaderText("Etat du dossier affecte avec succes");
+            alert.showAndWait();
+            ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
+            MenuChanger("menu.fxml");
+        }
+
     }
 
     public void rejeter(MouseEvent mouseEvent) throws SQLException {
@@ -217,7 +225,13 @@ public class ValidationDossierControllers implements Initializable {
         preparedStatement.setInt(1,etat);
         preparedStatement.setInt(2,dossierId);
         int resultat = preparedStatement.executeUpdate();
-        ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
-        MenuChanger("menu.fxml");
+        if (resultat == 1){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Information Dialog");
+            alert.setHeaderText("Etat du dossier affecte avec succes");
+            alert.showAndWait();
+            ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
+            MenuChanger("menu.fxml");
+        }
     }
 }
